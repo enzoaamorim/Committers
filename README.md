@@ -2,7 +2,7 @@
 
 ______________________________________________
 
-**Integrantes do Grupo - **
+**Integrantes do Grupo -**
 
 1º Integrante - Christian Mol
 
