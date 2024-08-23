@@ -4,13 +4,9 @@ ________________________________________________________________________________
 
 **Integrantes do Grupo:**
 
-1º Integrante - Christian Mol
+1º Integrante - Christian Mol                                            3º Integrante - Gustavo Freire
 
-2º Integrante - Enzo Amorim
-
-3º Integrante - Gustavo Freire
-
-4º Integrante - Micael Cadete
+2º Integrante - Enzo Amorim                                              4º Integrante - Micael Cadete
 
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
