@@ -35,5 +35,3 @@ ________________________________________________________________________________
 ▸ **Controle de Quantidade:** Monitore níveis de estoque e receba alertas quando a quantidade de um produto estiver abaixo de um limite mínimo definido.
 
 ▸ **Controle de Quantidade:** Monitore níveis de estoque e receba alertas quando a quantidade de um produto estiver abaixo de um limite mínimo definido.
-
-______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
