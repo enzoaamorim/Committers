@@ -1,8 +1,11 @@
 package Telas;
+
 import java.util.Scanner;
 
 public class BackOffIncluir {
-    public static void incluirUser(){
+
+    public static void incluirUser() {
+
         Scanner scan = new Scanner(System.in);
         System.out.println("                      Incluir Usuario");
         System.out.println("");
@@ -28,10 +31,9 @@ public class BackOffIncluir {
             System.out.println("Usuario incluido com sucesso!");
         }
 
-        else{
+        else {
             System.out.println("Usuario não pode ser incluido");
         }
-        
-        
+
     }
 }

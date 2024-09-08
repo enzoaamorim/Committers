@@ -1,0 +1,128 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0f0c25;
+    color: white;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
+}
+
+#login {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.caixa img {
+    width: 115px;
+}
+
+h1 {
+    font-size: 40px;
+    color: #fafafa;
+}
+
+.email input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #1e1c2e;
+    color: #b6b6b6;
+}
+
+.senha input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #1e1c2e;
+    color: #b6b6b6;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group i {
+    position: absolute;
+    top: 55%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16.5px;
+    color: #b6b6b6;
+}
+
+.input-group input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 40px; /* Espaço para o ícone */
+    background-color: #1e1c2e;
+    color: #b6b6b6;
+    line-height: 40px;
+}
+
+.input-groupsenha {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-groupsenha i {
+    position: absolute;
+    top: 55%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16.5px;
+    color: #b6b6b6;
+}
+
+.input-groupsenha input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 40px; /* Espaço para o ícone */
+    background-color: #1e1c2e;
+    color: #b6b6b6;
+    line-height: 40px;
+}
+
+.cadastrar input {
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(134, 243, 134);
+    color: #141414;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.cadastrar input:hover{
+    transform: scale(0.95);
+    transition: 1s;
+}
+
+input::placeholder {
+    color: #b6b6b6;
+}
+
+input:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: aquamarine;
+}
