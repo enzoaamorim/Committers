@@ -1,0 +1,126 @@
+
+
+
+/*DEIXEI RESPONSIVO, MAS PRECISA ARRUMAR OS ICONES DE EMAIL E SENHA*/
+
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* ou 'Nunito', sans-serif; */
+    background-color: #0f0c25;
+    color: white;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
+}
+
+#login {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 20px;
+}
+
+.caixa img {
+    width: 115px;
+}
+
+h1 {
+    font-size: 40px;
+    color: #fafafa;
+}
+
+.email input, .senha input, .input-group input, .input-groupsenha input {
+    border-radius: 15px;
+    border: none;
+    width: 100%; /* Ajuste para preencher a largura disponível */
+    height: 40px;
+    padding-left: 15px;
+    background-color: #1e1c2e;
+    color: #b6b6b6;
+    margin-top: 10px;
+}
+
+.input-group i, .input-groupsenha i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16.5px;
+    color: #b6b6b6;
+}
+
+.input-group input, .input-groupsenha input {
+    padding-left: 40px; /* Espaço para o ícone */
+}
+
+.entrar input {
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(134, 243, 134);
+    color: #141414;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.entrar input:hover {
+    transform: scale(0.95);
+    transition: 1s;
+}
+
+p {
+    margin-top: 20px;
+}
+
+input::placeholder {
+    color: #b6b6b6;
+}
+
+input:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: aquamarine;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .caixa img {
+        width: 90px;
+    }
+
+    .entrar input {
+        width: 100px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .caixa img {
+        width: 70px;
+    }
+
+    .entrar input {
+        width: 90px;
+        font-size: 14px;
+    }
+}
