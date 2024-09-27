@@ -1,5 +1,6 @@
+/* Mantém o estilo principal */
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Nunito', sans-serif;
     background-color: #0f0c25;
     color: white;
     display: flex; 
@@ -26,65 +27,9 @@ h1 {
     color: #fafafa;
 }
 
-.email input {
-    border-radius: 15px;
-    border: none;
-    width: 250px;
-    height: 40px;
-    padding-left: 15px;
-    background-color: #1e1c2e;
-    color: #b6b6b6;
-}
-
-.senha input {
-    border-radius: 15px;
-    border: none;
-    width: 250px;
-    height: 40px;
-    padding-left: 15px;
-    background-color: #1e1c2e;
-    color: #b6b6b6;
-}
-
-.input-group {
-    position: relative;
-    margin-bottom: 15px;
-}
-
-.input-group i {
-    position: absolute;
-    top: 55%;
-    left: 15px;
-    transform: translateY(-50%);
-    font-size: 16.5px;
-    color: #b6b6b6;
-}
-
-.input-group input {
-    border-radius: 15px;
-    border: none;
-    width: 250px;
-    height: 40px;
-    padding-left: 40px; /* Espaço para o ícone */
-    background-color: #1e1c2e;
-    color: #b6b6b6;
-    line-height: 40px;
-}
-
-.input-groupsenha {
-    position: relative;
-    margin-bottom: 15px;
-}
-
-.input-groupsenha i {
-    position: absolute;
-    top: 55%;
-    left: 15px;
-    transform: translateY(-50%);
-    font-size: 16.5px;
-    color: #b6b6b6;
-}
-
+.email input,
+.senha input,
+.input-group input,
 .input-groupsenha input {
     border-radius: 15px;
     border: none;
@@ -94,6 +39,22 @@ h1 {
     background-color: #1e1c2e;
     color: #b6b6b6;
     line-height: 40px;
+}
+
+.input-group,
+.input-groupsenha {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group i,
+.input-groupsenha i {
+    position: absolute;
+    top: 55%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16.5px;
+    color: #b6b6b6;
 }
 
 .cadastrar input {
@@ -109,7 +70,7 @@ h1 {
     margin-top: 15px;
 }
 
-.cadastrar input:hover{
+.cadastrar input:hover {
     transform: scale(0.95);
     transition: 1s;
 }
@@ -125,4 +86,49 @@ input:focus {
 a {
     text-decoration: none;
     color: aquamarine;
+}
+
+/* Regras de responsividade */
+@media (max-width: 768px) {
+    .caixa img {
+        width: 90px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .input-group input,
+    .input-groupsenha input {
+        width: 220px;
+        height: 35px;
+    }
+
+    .cadastrar input {
+        width: 130px;
+        height: 35px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .caixa img {
+        width: 70px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .input-group input,
+    .input-groupsenha input {
+        width: 180px;
+        height: 30px;
+    }
+
+    .cadastrar input {
+        width: 120px;
+        height: 30px;
+        font-size: 14px;
+    }
 }

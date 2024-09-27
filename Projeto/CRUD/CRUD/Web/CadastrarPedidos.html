@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/CadastrarPedidos.css">
+    <link rel="icon" type="image/x-icon" href="./Web/IMG/img-committers.png" />
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <title>Cadastrar Pedido</title>
+</head>
+
+<body>
+    <div id="login">
+        <div class="caixa">
+            <h1>Cadastrar Pedido</h1>
+
+            <form id="pedidoForm">
+                <div class="input-group">
+                    <i class="fi fi-rr-user"></i>
+                    <label for="clienteNome">Nome do Cliente:</label>
+                    <input type="text" id="clienteNome" required placeholder="Insira o nome do cliente">
+                </div>
+                <div class="input-group">
+                    <i class="fi fi-rr-box"></i>
+                    <label for="produto">Produto:</label>
+                    <input type="text" id="produto" required placeholder="Insira o nome do produto">
+                </div>
+                <div class="input-group">
+                    <i class="fi fi-rr-number"></i>
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" required placeholder="Insira a quantidade">
+                </div>
+                <div class="input-group">
+                    <i class="fi fi-rr-money"></i>
+                    <label for="preco">Preço:</label>
+                    <input type="text" id="preco" required placeholder="Insira o preço">
+                </div>
+                <div class="input-group">
+                    <i class="fi fi-rr-calendar"></i>
+                    <label for="dataPedido">Data do Pedido:</label>
+                    <input type="date" id="dataPedido" required>
+                </div>
+                <div class="cadastrar">
+                    <button type="submit" class="cadastrar">Cadastrar Pedido</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
