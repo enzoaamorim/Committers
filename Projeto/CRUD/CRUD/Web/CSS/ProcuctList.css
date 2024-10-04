@@ -1,44 +1,187 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
-
-*{
-    font-family: 'Nunito', sans-serif;
-    margin: 0; 
-    padding: 0;
-    box-sizing: border-box;
-    outline: none; 
-    border: none;
-    text-decoration: none;
-    transition: all .2s linear;
-    text-transform: capitalize;
-}
-
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-}
-
-body{
+body {
+    font-family: 'Nunito', sans-serif; 
     background-color: #0f0c25;
     color: white;
-    display: flex;
+    display: flex; 
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
 }
+
+header {
+    width: 97.2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    border: 3px solid white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    margin-top: -5px;
+    margin-left: -3px;
+  }
+  
+  .logo {
+    width: 50px;
+    cursor: pointer;
+    margin-left: 10%;
+  }
+  
+  .logo:hover {
+    transform: scale(0.93);
+    transition: all 0.5s;
+  }
+  
+  header ul {
+    list-style: none;
+    display: flex;
+    gap: 130px;
+  }
+  
+  header ul li {
+    display: inline-block;
+  }
+  
+  header ul li a {
+    font-size: 19px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  header ul li:hover {
+    transform: scale(0.93);
+    transition: all 0.5s;
+  }
+  
+  
+  /* Estilos para o botão de login */
+  
+  header .compras {
+    display: flex;
+    align-items: center;
+    background: none;
+    cursor: pointer;
+    margin-right: -14%;
+  }
+  
+  header .compras:hover {
+    transform: scale(0.95);
+    transition: all 0.4s;
+  }
+  
+  header .compras {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  header .compras img {
+    width: 45px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  header a {
+    display: flex;
+    align-items: center;
+    background: none;
+    cursor: pointer;
+    margin-right: 1%;
+  }
+  
+  header a:hover {
+    transform: scale(0.95);
+    transition: all 0.4s;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  header a img {
+    width: 45px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+  
+    .logo {
+      width: 200px;
+      margin-bottom: 10px;
+    }
+  
+    header ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    header ul li {
+      display: block;
+    }
+  
+    header a {
+      width: 100%;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+  
+    .logo {
+      width: 130px;
+      margin-bottom: 10px;
+    }
+  
+    header ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    header ul li {
+      display: block;
+    }
+  
+    header a {
+      width: 100%;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
 
 .container{
     max-width: 1200px;
     margin: 0 auto;
     padding: 3rem 2rem;
-    text-align: center;
-}
-
-.container .title{
-    font-size: 4rem;
-    color: #fafafa;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
     text-align: center;
 }
 
@@ -49,8 +192,9 @@ body{
 }
 
 .container .products-container .product{
+    margin-top: 100px;
     text-align: center;
-    padding: 4rem 4.5rem; /* Aumenta o padding dentro dos cards */
+    padding: 2rem 1rem; /* Aumenta o padding dentro dos cards */
     background-color: #1e1c2e;
     box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1); /* Aumenta a sombra para dar um efeito mais pronunciado */
     outline: .1rem solid white;
@@ -63,11 +207,13 @@ body{
 .container .products-container .product:hover{
     outline: .2rem solid #222;
     outline-offset: 0;
+    transition: 0.8s;
 }
 
 .container .products-container .product img{
-    height: 25rem; /* Aumenta a altura das imagens */
-    margin-bottom: 15px;
+    margin-top: 15px;
+    height: 6rem; /* Aumenta a altura das imagens */
+    margin-bottom: -10px;
 }
 
 .container .products-container .product:hover img{
@@ -76,7 +222,7 @@ body{
 
 .container .products-container .product h3{
     padding: 1rem 0; /* Aumenta o espaçamento interno dos títulos */
-    font-size: 2.8rem; /* Aumenta o tamanho da fonte do título */
+    font-size: 1.8rem; /* Aumenta o tamanho da fonte do título */
     color: #fafafa; /*Cor do titulo do card*/
     font-weight: bold;
 }
@@ -86,21 +232,27 @@ body{
 }
 
 .container .products-container .product .price{
-    font-size: 2rem; /* Aumenta o tamanho da fonte do preço */
-    margin-bottom: 10px;
+    font-size: 1rem; /* Aumenta o tamanho da fonte do preço */
+    margin-top: -30px;
+    margin-bottom: 30px;
     color: #b6b6b6;
 }
 
 .container .products-container .product button{
     margin-top: 5px;
-    width: 85%;
-    height: 40px;
+    margin-bottom: 15px;
+    width: 65%;
+    height: 35px;
     font-size: 17px;
     background: none;
     color: white;
     border: 2px solid white;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.container .products-container .product .detalhes{
+    margin-bottom: 10px;
 }
 
 .cart{

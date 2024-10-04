@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/DetalhesMonitor.css">
+    <link rel="icon" type="image/x-icon" href="./IMG/img-committers.png" />
+    <title>Detalhes - Monitor</title>
+</head>
+
+<body>
+
+    <!-- Começo do Cabeçalho -->
+    <header>
+
+        <!-- Logo do Site -->
+        <a href="Home.html">
+            <img src="../Web/IMG/img-committers.png" class="logo"> Committers
+        </a>
+
+        <ul>
+            <!-- Links de navegação -->
+            <li><a data-scroll="inicio" href="Home.html">Home</a></li>
+            <li><a href="ProductList.html">Produtos</a></li>
+            <li><a data-scroll="informacoes" href="#informacoes">Informações</a></li>
+        </ul>
+
+        <!-- Botão de login -->
+        <a href="CarrinhoCompras.html" class="compras">
+            <img src="../Web/IMG/img-carrinho.png" alt="Entrar">
+        </a>
+        <a href="SignIn.html">
+            <img src="../Web/IMG/img-user.png" alt="Entrar">
+        </a>
+
+    </header>
+
+    <!-- Slider -->
+  <section id="inicio">
+    <div class="slider">
+
+      <div class="slides">
+        <!-- Botões de rádio para navegação -->
+        <input type="radio" name="radio-btn" id="radio1" />
+        <input type="radio" name="radio-btn" id="radio2" />
+        <input type="radio" name="radio-btn" id="radio3" />
+        <input type="radio" name="radio-btn" id="radio4" />
+
+        <!-- Imagens dos slides -->
+        <div class="slide first">
+          <img src="../Web/IMG/IMG_ProductCads/img-monitor.png" alt="Imagem1" />
+        </div>
+        <div class="slide">
+          <img src="../Web/IMG/IMG_ProductCads/img-monitor.png" alt="Imagem2" />
+        </div>
+        <div class="slide">
+          <img src="../Web/IMG/IMG_ProductCads/img-monitor.png" alt="Imagem3" />
+        </div>
+        <div class="slide">
+          <img src="../Web/IMG/IMG_ProductCads/img-monitor.png" alt="Imagem4" />
+        </div>
+
+        <!-- Navegação automática -->
+        <div class="navigation-auto">
+          <div class="auto-btn1"></div>
+          <div class="auto-btn2"></div>
+          <div class="auto-btn3"></div>
+          <div class="auto-btn4"></div>
+        </div>
+      </div>
+
+      <!-- Navegação manual -->
+      <div class="manual-navigation">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+      </div>
+    </div>
+  </section>
+
+  <h3>*DESCRIÇÃO DO PRODUTO*</h3>
+
+  <script src="../Web/Js/DetalhesMonitor.js"></script>
+</body>
+
+</html>

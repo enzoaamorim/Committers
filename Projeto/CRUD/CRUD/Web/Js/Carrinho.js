@@ -1,4 +1,4 @@
-// Array para armazenar os produtos no carrinho
+   // Array para armazenar os produtos no carrinho
 const cart = [];
 const cartItemsContainer = document.getElementById('cart-items');
 const totalPriceContainer = document.getElementById('total-price');
