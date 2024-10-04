@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,38 +11,46 @@
    <title>Lista de Produtos</title>
    <link rel="icon" type="image/x-icon" href="./IMG/img-committers.png" />
 </head>
+
 <body>
-   
-<div class="container">
-   <h3 class="title"> Lista de Produtos </h3>
-   <div class="products-container">
-      <div class="product" data-name="Produto 1" data-price="2.00">
-         <img src="IMG/IMG_ProductCads/insMind-3.png" alt="">
-         <h3>Produto 1</h3>
-         <div class="price">$2.00</div>
-         <button class="add-to-cart">Adicionar ao carrinho</button>
-      </div>
-      <div class="product" data-name="Produto 2" data-price="2.00">
-         <img src="IMG/IMG_ProductCads/download.jpeg" alt="">
-         <h3>Produto 2</h3>
-         <div class="price">$2.00</div>
-         <button class="add-to-cart">Adicionar ao carrinho</button>
+
+   <div class="container">
+      <h3 class="title"> Lista de Produtos </h3>
+      <div class="products-container">
+         <div class="product" data-name="Produto 1" data-price="2.00">
+            <img src="IMG/IMG_ProductCads/img-monitor.png" alt="">
+            <h3>Monitor</h3>
+            <div class="price">$2.00</div>
+            <button class="add-to-cart">Adicionar ao carrinho</button>
+         </div>
+         <div class="product" data-name="Produto 2" data-price="2.00">
+            <img src="IMG/IMG_ProductCads/img-mouse.png" alt="">
+            <h3>Mouse</h3>
+            <div class="price">$2.00</div>
+            <button class="add-to-cart">Adicionar ao carrinho</button>
+         </div>
       </div>
    </div>
-</div>
 
-<div class="cart">
-   <h3>Carrinho de Compras</h3>
-   <div id="cart-items"></div>
-   <div id="total-price">Total: $0.00</div>
-   <div id="shipping-cost">Frete: $0.00</div>
-   <input type="text" id="zipcode" placeholder="Digite seu CEP" />
-   <button id="calculate-shipping">Calcular Frete</button>
-   <button id="checkout">Finalizar Compra</button>
-</div>
+   <div class="cart">
+      <h3>Carrinho de Compras</h3>
+      <div id="cart-items"></div>
+
+      <div class="info">
+         <div id="total-price">Total: $0.00</div>
+         <div id="shipping-cost">Frete: $0.00</div>
+      </div>
+
+      <div class="frete">
+         <input type="text" id="zipcode" placeholder="Digite seu CEP" />
+         <button id="calculate-shipping">Calcular Frete</button>
+      </div>
+      <button id="checkout">Finalizar Compra</button>
+   </div>
 
 
 
-<script src="Js/Carrinho.js"></script>
+   <script src="Js/Carrinho.js"></script>
 </body>
+
 </html>

@@ -21,6 +21,7 @@ body{
     background-color: #0f0c25;
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -43,19 +44,20 @@ body{
 
 .container .products-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Três colunas */
+    grid-template-columns: repeat(2, 1fr); /* Três colunas */
     gap: 4rem; /* Aumenta o espaço estre os cards */
 }
 
 .container .products-container .product{
     text-align: center;
-    padding: 4rem 3rem; /* Aumenta o padding dentro dos cards */
+    padding: 4rem 4.5rem; /* Aumenta o padding dentro dos cards */
     background-color: #1e1c2e;
     box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1); /* Aumenta a sombra para dar um efeito mais pronunciado */
-    outline: .1rem solid #ccc;
+    outline: .1rem solid white;
     outline-offset: -1.5rem;
     cursor: pointer;
     color: #b6b6b6;
+    border-radius: 50px;
 }
 
 .container .products-container .product:hover{
@@ -64,7 +66,8 @@ body{
 }
 
 .container .products-container .product img{
-    height: 30rem; /* Aumenta a altura das imagens */
+    height: 25rem; /* Aumenta a altura das imagens */
+    margin-bottom: 15px;
 }
 
 .container .products-container .product:hover img{
@@ -73,8 +76,9 @@ body{
 
 .container .products-container .product h3{
     padding: 1rem 0; /* Aumenta o espaçamento interno dos títulos */
-    font-size: 2.5rem; /* Aumenta o tamanho da fonte do título */
+    font-size: 2.8rem; /* Aumenta o tamanho da fonte do título */
     color: #fafafa; /*Cor do titulo do card*/
+    font-weight: bold;
 }
 
 .container .products-container .product:hover h3{
@@ -82,8 +86,72 @@ body{
 }
 
 .container .products-container .product .price{
-    font-size: 2.5rem; /* Aumenta o tamanho da fonte do preço */
+    font-size: 2rem; /* Aumenta o tamanho da fonte do preço */
+    margin-bottom: 10px;
     color: #b6b6b6;
+}
+
+.container .products-container .product button{
+    margin-top: 5px;
+    width: 85%;
+    height: 40px;
+    font-size: 17px;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cart{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 15px;
+}
+
+.cart #cart-items{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.cart .info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.cart input{
+    width: 100%;
+    height: 30px;
+    font-size: 17px;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.cart .frete{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.cart button{
+    width: 100%;
+    height: 30px;
+    font-size: 17px;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.cart #checkout{
+    margin-top: 25px;
 }
 
 .products-preview{
