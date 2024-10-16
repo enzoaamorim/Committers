@@ -1,0 +1,196 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f0c25;
+    color: white;
+}
+
+/* Cabeçalho */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    background-color: #0f0c25;
+    border-bottom: 3px solid white;
+    margin-bottom: 100px;
+}
+
+
+/* Estilo para a div da imagem */
+.imagem1 {
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+}
+
+/* Estilo para a imagem */
+.imagem1 img {
+    width: 200px; /* Ajuste a largura desejada */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+h1{
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+#login {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Links de navegação */
+.nav-links a {
+    margin: 0 150px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Ícones */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Ícones do Material */
+.material-icons {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Menu do usuário */
+.user-menu {
+    position: relative;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    list-style: none;
+}
+
+.user-dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.user-dropdown li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Mostrar o menu ao passar o mouse */
+.user-menu:hover .user-dropdown {
+    display: block;
+}
+#login {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.caixa img {
+    width: 115px;
+}
+
+.input-group{
+margin-top: 40px;
+align-items: center;
+}
+
+.email input,
+.senha input {
+    border-radius: 15px;
+    border: none;
+    width: 100%;
+    max-width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #1e1c2e;
+    color: #b6b6b6;
+    padding-left: 40px;
+}
+
+.input-group,
+.input-groupsenha {
+    position: relative;
+    margin-bottom: 10px;
+    color: #b6b6b6;
+    width: 100%;
+    max-width: 250px;
+}
+
+.input-group i,
+.input-groupsenha i {
+    position: absolute;
+    top: 55%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16.5px;
+    color: #b6b6b6;
+}
+
+.entrar input {
+    margin-top: 10px;
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(134, 243, 134);
+    color: #141414;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.entrar input:hover {
+    transform: scale(0.95);
+    transition: 1s;
+}
+
+p {
+    margin-top: 20px;
+}
+
+input::placeholder {
+    color: #b6b6b6;
+}
+
+input:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: aquamarine;
+}
