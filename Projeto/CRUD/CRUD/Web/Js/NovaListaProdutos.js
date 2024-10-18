@@ -19,4 +19,5 @@ previewBox.forEach(close =>{
     close.classList.remove('active');
     preveiwContainer.style.display = 'none';
   };
-});
+}
+);

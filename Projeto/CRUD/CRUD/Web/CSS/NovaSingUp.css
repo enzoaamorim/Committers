@@ -1,0 +1,184 @@
+/*PRECISA ADICIONAR UM ICONE AO CAMPO DE GÊNERO*/
+
+
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f0c25;
+    color: white;
+}
+
+/* Cabeçalho */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    background-color: #272063;
+    margin-bottom: 100px;
+    border-bottom: 1px solid white;
+}
+
+.nav-links a {
+    margin: 0 100px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Ícones de navegação */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.material-icons {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Menu do usuário */
+.user-menu {
+    position: relative;
+}
+
+/* Formulário de Cadastro */
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Título */
+h1 {
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+/* Container das fileiras */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    max-width: 900px;
+}
+
+/* Estilo de cada fileira */
+.row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.input-group select {
+    width: 100%;
+    height: 40px;
+    padding-left: 40px; /* Espaço para ícone */
+    background-color: #1e1c2e;
+    color: #b6b6b6;
+    border: none;
+    border-radius: 15px;
+    appearance: none;
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none;    /* Firefox */
+    cursor: pointer;
+}
+
+/* Campos de entrada e select */
+.input-group input {
+    width: 100%;
+    height: 40px;
+    padding-left: 40px; /* Espaço para ícone */
+    background-color: #1e1c2e;
+    color: #b6b6b6;
+    border: none;
+    border-radius: 15px;
+    appearance: none;
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none;    /* Firefox */
+}
+
+/* Ícones */
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16.5px;
+    color: #b6b6b6;
+}
+
+/* Adicionando seta personalizada ao <select> */
+.input-group select::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Estilo dos grupos de entrada */
+.input-group {
+    position: relative;
+    width: 48%; /* Cada campo ocupa 48% para se alinhar lado a lado */
+}
+
+/* Botão de cadastro */
+.cadastrar input {
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    border: 0.1px solid white;
+    background-color: #272063;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.cadastrar input:hover {
+    transform: scale(0.95);
+    transition: 1s;
+}
+
+/* Placeholder */
+input::placeholder {
+    color: #b6b6b6;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+}
