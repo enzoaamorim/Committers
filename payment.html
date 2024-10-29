@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <title>Committers - Pagamento</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/payment.css"> <!-- CSS dedicado -->
+    <script src="/js/payment.js"></script> <!-- JS dedicado -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 class="text-center my-4">Método de Pagamento</h2>
+        
+        <form>
+            <div class="mb-3">
+                <label for="cardNumber" class="form-label">Número do Cartão</label>
+                <input type="text" class="form-control" id="cardNumber" placeholder="**** **** **** ****" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="cardholderName" class="form-label">Nome do Titular</label>
+                <input type="text" class="form-control" id="cardholderName" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="expiryDate" class="form-label">Data de Validade</label>
+                <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cvv" placeholder="***" required>
+            </div>
+
+            <button type="submit" class="btn btn-success">Finalizar Pagamento</button>
+        </form>
+    </div>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

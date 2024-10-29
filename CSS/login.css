@@ -1,0 +1,30 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; /* Cor de fundo */
+}
+
+h2 {
+    color: #007bff; /* Cor verde para o título */
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para o formulário */
+}
+
+
+.btn-success {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px; /* Bordas arredondadas nos botões */
+    padding: 10px 20px; /* Espaçamento interno nos botões */
+    font-weight: bold; /* Texto em negrito nos botões */
+    transition: background-color 0.3s; /* Transição suave na cor de fundo */
+}
+
+.btn-psuccess:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+}

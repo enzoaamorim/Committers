@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <title>Carrinho - Committers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../NovoCommitters/CSS/cart.css"> <!-- CSS dedicado -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Ícones adicionais -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../NovoCommitters/IMG/img-committers.png">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="index.html"> <img src="../NovoCommitters/IMG/img-committers.png" alt="Logo do E-commerce" width="40"
+                height="40">
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Produtos</a>
+            <a href="#informacoes">Informações</a>
+        </nav>
+
+        <div class="icons">
+            <a href="cart.html" class="compras">
+                <span class="material-icons">shopping_cart</span>
+            </a>
+            <div class="user-menu">
+                <a href="login.html">
+                    <span class="material-icons user-icon">account_circle</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Open Content -->
+    <section class="bg-light">
+        <div class="container pb-5">
+            <h1 class="text-center my-5">Carrinho de Compras</h1>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Preço</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="carrinho-itens">
+                    <!-- Produtos do carrinho serão inseridos aqui pelo JavaScript -->
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <h5>Total Geral: <span id="total">R$ 499,70</span></h5>
+                <button class="btn btn-primary">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+    <!-- Close Content -->
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="../NovoCommitters/JS/cart.js"></script> <!-- JS dedicado -->
+</body>
+
+</html>

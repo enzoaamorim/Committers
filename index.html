@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <title>Home - Committers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Inclui o Bootstrap CSS -->
+    <link rel="stylesheet" href="../NovoCommitters/css/bootstrap.min.css">
+    <!-- Inclui o CSS dedicado -->
+    <link rel="stylesheet" href="../NovoCommitters/CSS/index.css">
+    <!-- Ícones do Google -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Ícones adicionais -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../NovoCommitters/IMG/img-committers.png">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="index.html"> <img src="../NovoCommitters/IMG/img-committers.png" alt="Logo do E-commerce" width="40"
+                height="40">
+        </a>
+
+        <nav class="nav-links">
+            <a href="NovaListaProdutos.html">Produtos</a>
+            <a href="#informacoes">Informações</a>
+        </nav>
+
+        <div class="icons">
+            <a href="cart.html" class="compras">
+                <span class="material-icons">shopping_cart</span>
+            </a>
+            <div class="user-menu">
+                <a href="login.html">
+                    <span class="material-icons user-icon">account_circle</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Open Banner -->
+    <div class="container-fluid bg-success text-light text-center py-5">
+        <h1>Bem-vindo ao Committers!</h1>
+        <p>Seu Destino para Produtos de Informática de Qualidade!</p>
+        <div class="container my-5" id="categorias" style="display: none;">
+            <h2 class="text-center mb-4">Categorias</h2>
+            <div class="row" id="categoria-lista">
+                <!-- As categorias serão inseridas aqui dinamicamente -->
+            </div>
+        </div>
+        <button id="toggleCategoriasBtn" onclick="toggleCategorias()">Ver Categorias</button>
+    </div>
+    <!-- Close Banner -->
+
+    <!-- Open Product Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Nossos Produtos</h2>
+        <div class="product-container">
+            <div class="col-md-4" data-categoria="Notebooks">
+                <div class="card mb-4 shadow">
+                    <div id="carouselProduto1" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../NovoCommitters/IMG/Produtos/produto1.png" class="d-block w-100"
+                                    alt="Produto 1 Imagem 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../NovoCommitters/IMG/Produtos/produto1.2.png" class="d-block w-100"
+                                    alt="Produto 1 Imagem 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../NovoCommitters/IMG/Produtos/produto1.3.png" class="d-block w-100"
+                                    alt="Produto 1 Imagem 3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Notebook Lenovo Gaming I3</h5>
+                        <p class="card-text">Intel Core i5-11300H GeForce GTX1650 8GB RAM SSD 512GB 15.6 Full HD Windows 11 Preto - 82MG0009BR</p>
+                        <p class="text-success">R$ 4,599,00</p>
+                        <a href="#" class="btn btn-success" onclick="adicionarAoCarrinho('Produto 1', 4599.00)">Adicionar
+                            ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-categoria="Acessórios">
+                <div class="card mb-4 shadow">
+                    <div id="carouselProduto2" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../NovoCommitters/IMG/Produtos/produto2.png" class="d-block w-100" alt="Produto 2 Imagem 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../NovoCommitters/IMG/Produtos/produto1.2.png" class="d-block w-100" alt="Produto 2 Imagem 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../NovoCommitters/IMG/Produtos/produto1.3.png" class="d-block w-100" alt="Produto 2 Imagem 3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mouse Gamer Redragon King Cobra 2</h5>
+                        <p class="card-text">RGB Chroma, 24000DPI, Sensor Óptico, USB, Preto - M711-FPS-1</p>
+                        <p class="text-success">R$ 160,00</p>
+                        <a href="#" class="btn btn-success" onclick="adicionarAoCarrinho('Produto 2', 160.00)">Adicionar
+                            ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-categoria="Componentes">
+                <div class="card mb-4 shadow">
+                    <div id="carouselProduto3" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../NovoCommitters/IMG/Produtos/produto3.png" class="d-block w-100" alt="Produto 3 Imagem 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../NovoCommitters/IMG/Produtos/produto1.2.png" class="d-block w-100" alt="Produto 3 Imagem 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../NovoCommitters/IMG/Produtos/produto1.3.png" class="d-block w-100" alt="Produto 3 Imagem 3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Memória Gamer Xpg Gammix D35</h5>
+                        <p class="card-text">16GB, DDR4, 3200 Mhz, Branco - Ax4u320016g16a-swhd35</p>
+                        <p class="text-success">R$ 280,77</p>
+                        <a href="#" class="btn btn-success" onclick="adicionarAoCarrinho('Produto 3', 280.77)">Adicionar
+                            ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão "Ver Todos" -->
+        <div class="text-center" style="display: none;" id="verTodosBtn">
+            <button class="btn btn-light text-success" onclick="mostrarTodosProdutos()">Ver Todos</button>
+        </div>
+    </section>
+
+
+    <!-- Close Product Section -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Carrega o jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap JS -->
+    <script src="../NovoCommitters/JS/index.js"></script>
+
+</body>
+
+</html>

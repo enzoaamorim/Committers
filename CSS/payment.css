@@ -1,0 +1,27 @@
+/* payment.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; /* Cor de fundo */
+}
+
+h2 {
+    color: #0056b3; /* Cor verde para o título */
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-success {
+    background-color: #007bff; /* Cor verde do botão */
+    border-color: #007bff; /* Cor da borda do botão */
+}
+
+.btn-success:hover {
+    background-color: #007bff; /* Cor do botão ao passar o mouse */
+    border-color: #007bff; /* Cor da borda do botão ao passar o mouse */
+}

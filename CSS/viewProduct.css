@@ -1,0 +1,18 @@
+/* Estilizando o corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; /* Cor de fundo suave */
+}
+
+h2 {
+    color: #343a40; /* Cor do título */
+}
+
+.btn-success, .btn-primary {
+    width: 100%; /* Botões com largura total */
+}
+
+.img-fluid {
+    max-height: 400px; /* Altura máxima da imagem do produto */
+    object-fit: contain; /* Ajusta a imagem */
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <title>Checkout - Committers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/checkout.css"> <!-- CSS dedicado -->
+    <script src="/js/checkout.js"></script> <!-- JS dedicado -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/IMG/img-committers.png" alt="Committers Logo" height="40">
+            </a>
+        </div>
+    </nav>
+    <!-- End Header -->
+
+    <!-- Open Content -->
+    <section class="bg-light">
+        <div class="container pb-5">
+            <h1 class="text-center my-5">Finalizar Compra</h1>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Resumo do Carrinho</h3>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Produto 1
+                            <span>R$ 199,99</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Produto 2
+                            <span>R$ 299,99</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Produto 3
+                            <span>R$ 150,00</span>
+                        </li>
+                    </ul>
+                    <h4>Total: R$ 649,98</h4>
+                </div>
+
+                <div class="col-md-6">
+                    <h3>Informações de Entrega</h3>
+                    <form id="checkoutForm">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Endereço</label>
+                            <input type="text" class="form-control" id="address" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="city" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="city" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="zipCode" class="form-label">CEP</label>
+                            <input type="text" class="form-control" id="zipCode" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="paymentMethod" class="form-label">Método de Pagamento</label>
+                            <select class="form-select" id="paymentMethod" required>
+                                <option value="" disabled selected>Selecione um método</option>
+                                <option value="creditCard">Cartão de Crédito</option>
+                                <option value="debitCard">Cartão de Débito</option>
+                                <option value="paypal">PayPal</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success">Finalizar Compra</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Close Content -->
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
