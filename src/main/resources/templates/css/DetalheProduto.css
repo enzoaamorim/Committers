@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #cf1212;
+  }
+  
+  .header-inner-content {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .navbar {
+    background-color: #000000;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 10px 0px 10px #c71616;
+    z-index: 99;
+  }
+  
+  .navbar > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    color: #ff0000;
+  }
+  
+  .logo span {
+    color: aliceblue;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .nav-icon-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-icon-container img {
+    width: 30px;
+    cursor: pointer;
+  }
+  
+  .nav-icon-container img:first-child {
+    margin-right: 1rem;
+  }
+  
+  nav ul li {
+    color: white;
+    margin-right: 1.5rem;
+    cursor: pointer;
+  }
+  
+  nav ul li:hover {
+    transform: translateY(-5px);
+    transition: all 0.2s;
+    font-weight: bold;
+  }
+  
+  .menu-button {
+    display: none;
+  }
+  
+  .separacao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #2814db;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #2e1291;
+    border: 1px solid #105afb;
+  }
+  
+  .separacao img {
+    border-radius: 10px;
+  }
+  
+  .div-fotos {
+    max-width: 100%;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: aliceblue;
+  }
+  
+  .nome {
+    color: aliceblue;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .valor {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 15px;
+  }
+  
+  .buttonadd {
+    background-color: #f00000;
+    padding: 20px;
+    border-radius: 10px;
+    align-self: flex-end;
+    font-weight: bold;
+    color: aliceblue;
+    margin-right: 15px;
+    margin-top: 30px;
+  }
+  
+  .avaliacao {
+    font-size: 25px;
+    margin-top: 5px;
+  }
+  
+  .descricao {
+    margin-top: 15px;
+  }
+  
+  .precoarrums {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .precoarrums span {
+    align-self: flex-end;
+    color: #fff1f1;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  
+  a {
+    text-decoration: none;
+  }

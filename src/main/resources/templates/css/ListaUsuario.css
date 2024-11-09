@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    background-image: url(/target/classes/templates/img/FundoCadastro.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  h1 {
+    margin: 40px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+  }
+  
+  .box {
+    background-color: rgba(255, 255, 255, 0.0);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    gap: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.0);
+  }
+  
+  input {
+    width: 300px;
+    height: 30px;
+    border-radius: 8px;
+    padding: 0 15px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    width: 100px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cabecalho {
+    width: 1000px;
+    margin: 0 auto;
+    background-color: rgb(255, 0, 0);
+    border-radius: 10px 10px 0 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cabecalho span {
+    display: inline-block;
+    font-size: large;
+    font-weight: bold;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  p {
+    border: 1px solid rgb(255, 0, 0);
+    padding-left: 10px;
+  }
+  
+  p,
+  button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .renderizados {
+    width: 1000px;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  
+  #add {
+    align-self: flex-end;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    justify-content: center;
+  }
+  
+  .div-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .div-buttons button {
+    justify-content: center;
+  }
+  
+  .div-usuario {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    border: 1px solid rgb(255, 0, 0);
+    padding-left: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .div-usuario span {
+    padding-top: 7px;
+  }
+  
+  .nome {
+    margin-left: 65px;
+  }
+  .email {
+    margin-left: 105px;
+  }
+  .status {
+    margin-left: 105px;
+  }
+  .nivel {
+    margin-left: 105px;
+  }
+  .alterar {
+    margin-left: 75px;
+  }
+  .hab {
+    margin-left: 80px;
+  }
+  

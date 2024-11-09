@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <link rel="stylesheet" href="/target/classes/templates/css/ClienteMenu.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="header-inner-content">
+        <h1 class="logo">Market Book</span></h1>
+        <nav>
+          <ul>
+            <a href="/target/classes/templates/html/ClienteMenu.html">
+              <li>Home</li>
+            </a>
+            <a href="/target/classes/templates/html/ClienteConta.html">
+              <li>Conta</li>
+            </a>
+          </ul>
+        </nav>
+        <div class="nav-icon-container">
+          <a href="/target/classes/templates/html/ClienteCarrinho.html">
+            <img src="/target/classes/templates/img/CarrinhoCompra.svg" alt="Carrinho">
+          </a>
+          <img src="/target/classes/templates/img/menu.png" alt="Menu" class="menu-button">
+        </div>
+      </div>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <img src="/target/classes/templates/img/TurmaDaMonica.jpg" alt="Image 2">
+        <div class="carousel-text">
+          <h2 class="TM">Gibis da monica</h2>
+          <p>Confira já os gibis da monica</p>
+          <!-- <button class="buttonMonica">Ver mais</button> -->
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <img src="/target/classes/templates/img/Bok diario.webp" alt="Image 3">
+        <div class="carousel-text">
+          <h2 class="BN">Diario de um Banana</h2>
+          <p>Gibis para se divertir com historia de um menino muito legal</p>
+          <!-- <button>Ver mais</button> -->
+        </div>
+      </div>
+    </div>
+    <h1 class="Texto">Mais Vendidos</h1>
+    <div class="renderizados">
+      <ul id="listaProdutos"></ul>
+    </div>
+  </div>
+  <script src="/target/classes/templates/js/ClienteMenu.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".carousel-slide");
+      let currentSlide = 0;
+
+      function showSlide(n) {
+        slides.forEach((slide) => {
+          slide.style.display = "none";
+        });
+        slides[n].style.display = "block";
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      setInterval(nextSlide, 5000);
+    });</script>
+
+</body>
+
+</html>

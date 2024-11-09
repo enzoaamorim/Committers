@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2c2c2c;
+    background-image: url(/target/classes/templates/img/FundoLogin.jpg);
+    background-size: cover; /* Ajusta a imagem para cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+}
+
+.header-inner-content {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar {
+    background-color: transparent; 
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 10px 0px 10px #2c2c2c;
+    z-index: 99;
+}
+
+.navbar > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #ffffff;
+}
+
+.logo span {
+    color: aliceblue;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon-container img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.nav-icon-container img:first-child {
+    margin-right: 1rem;
+}
+
+nav ul li {
+    color: white;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    transform: translateY(-5px);
+    transition: all 0.2s;
+    font-weight: bold;
+}
+
+.menu-button {
+    display: none;
+}
+
+.separacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.separacao img {
+    border-radius: 10px;
+}
+
+.div-fotos {
+    max-width: 100%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: aliceblue;
+    background-color: rgba(255, 255, 255, 0.0); 
+    width: 500px;
+    height: 400px;
+    margin-top: 200px;
+    border-radius: 10px;
+    border: none;
+}
+
+.login {
+    color: rgb(13, 119, 211);
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.buttonadd {
+    background-color: #ff0000;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: aliceblue;
+    margin-right: 15px;
+    margin-top: 60px;
+    border: none;
+}
+
+.info input {
+    background-color: white; /* Fundo branco para os campos de entrada */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    margin-top: 40px;
+    color: black; /* Texto preto para contraste com o fundo branco */
+}
+
+#formLogin {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contantem a {
+    color: #fb1010;
+    text-decoration: underline;
+}
+
+.contantem {
+    margin-top: 10px;
+}

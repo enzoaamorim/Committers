@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro Produto</title>
+  <link rel="stylesheet" href="/target/classes/templates/css/CadastroProduto.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <h1>Cadastro de Produtos</h1>
+      <form id="formCadastro">
+        <input type="text" class="nome" name="nome" placeholder="Nome do produto" required>
+        <input type="text" class="valor" name="valor" placeholder="Valor" maxlength="11" pattern="\d*" required>
+        <input type="text" class="quantidade" name="quantidade" placeholder="Quantidade" required>
+        <input type="text" class="avaliacao" name="avaliacao" placeholder="Avaliação" required>
+        <input type="text" class="descricao" name="descricao" placeholder="Descrição Detalhada" required>
+        <input type="file" name="imagem" id="imagemInput" onchange="previewButton()">
+        <div class="imagens">
+          <div id="preview" style="max-width: 300px; max-height: 200px;"></div>
+        </div>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+  <script src="/target/classes/templates/js/CadastroProduto.js" defer></script>
+</body>
+
+</html>
