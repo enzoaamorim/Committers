@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/dev/target/classes/templates/css/AlterarProduto.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+  <title>Tela de Produtos</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <h1>Tela de produtos</h1>
+      <div class="separacao">
+        <div>
+          <div class="fotos"></div>
+          <button class="butImg">+</button>
+          <button class="butImg">></button>
+        </div>
+        <div class="inputs">
+          <form id="formAltProdutos">
+            <p>Nome do Produto:</p>
+            <input type="text" id="nome" class="nome" name="nome" placeholder="Nome do produto" required>
+            <p>Preço:</p>
+            <input type="text" id="valor" class="valor" name="valor" placeholder="Valor" maxlength="11" pattern="\d*" required>
+            <p>Quantidade:</p>
+            <input type="text" class="quantidade" name="quantidade" placeholder="Quantidade" required>
+            <p>Nota de Avaliação (1 a 5):</p>
+            <input type="text" class="avaliacao" name="avaliacao" placeholder="Avaliação" required>
+            <p>Descrição:</p>
+            <input type="text" class="descricao" name="descricao" placeholder="Descrição Detalhada" required>
+            <div>
+              <button id="cancelar">Cancelar</button>
+              <button type="submit" id="botaoEditar" class="Alterar">Atualizar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="/target/classes/templates/js/AlterarProduto.js"></script>
+    <script>
+      var botao = document.getElementById('cancelar');
+
+
+      botao.addEventListener('click', function () {
+
+        window.location.href = 'ListaProduto.html';
+      });</script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cadastrar - Produto</title>
+  <link rel="icon" href="/committers/src/main/resources/templates/img/img-committers.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/committers/src/main/resources/templates/css/CadastroProduto.css">
+  <link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+</head>
+
+<body>
+
+  <header class="header">
+    <a href="index.html">
+      <img src="/committers/src/main/resources/templates/img/img-committers.png" alt="Logo do E-commerce" width="40"
+        height="40">
+    </a>
+
+    <nav class="nav-links">
+      <a href="NovaListaProdutos.html">Home</a>
+      <a href="#informacoes">Conta</a>
+    </nav>
+
+    <div class="icons">
+      <a href="cart.html" class="compras icon-text">
+        <i class="fi fi-rr-cart-shopping-fast"></i>
+        <span>Carrinho</span>
+      </a>
+      <a href="login.html" class="user icon-text">
+        <i class="fi fi-rr-circle-user"></i>
+        <span>Login</span>
+      </a>
+    </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="separacao">
+
+      <p class="cadastro" name="cadastro">Cadastro de Produto</p>
+
+      <form id="formCadastro">
+
+        <div class="info">
+          <input type="text" class="nome" name="nome" placeholder="Nome do produto" required>
+          <input type="text" class="valor" name="valor" placeholder="Valor" maxlength="11" pattern="\d*" required>
+          <input type="text" class="quantidade" name="quantidade" placeholder="Quantidade" required>
+          <input type="text" class="avaliacao" name="avaliacao" placeholder="Avaliação" required>
+          <input type="text" class="descricao" name="descricao" placeholder="Descrição Detalhada" required>
+
+          <input type="file" name="imagem" id="imagemInput" onchange="previewButton()">
+          <div class="imagens">
+            <div id="preview" style="max-width: 300px; max-height: 200px;"></div>
+          </div>
+
+          <button class="buttonadd" type="submit">Cadastrar</button>
+
+        </div>
+
+      </form>
+      
+    </div>
+  </div>
+  <script src="/committers/src/main/resources/templates/js/CadastroProduto.js" defer></script>
+</body>
+
+</html>

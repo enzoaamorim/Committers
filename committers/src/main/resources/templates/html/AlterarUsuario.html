@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alterar Usuario</title>
+  <link rel="stylesheet" href="/target/classes/templates/css/AlterarUsuario.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <h1>Alterar Usuario</h1>
+      <form id="formCadastro">
+        <input type="text" class="nome" name="nome" placeholder="Nome" required>
+        <input type="text" class="cpf" name="cpf" placeholder="CPF (somente números)" maxlength="11" pattern="\d*" required>
+        <input type="password" class="senha" name="senha" id="senha" placeholder="Senha" required>
+        <input type="password" class="confirmar-senha" id="confirmarSenha" placeholder="Confirmar Senha" required>
+        <select class="nivel" name="nivel" required>
+
+          <option value="1">Administrador</option>
+          <option value="2">Estoquista</option>
+
+        </select>
+        <button type="submit" id="botaoEditar" class="Alterar">Alterar</button>
+      </form>
+    </div>
+  </div>
+  <script src="/target/classes/templates/js/AlterarUsuario.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliente Conta</title>
+  <link rel="stylesheet" href="/target/classes/templates/css/ClienteConta.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="header-inner-content">
+        <h1 class="logo">Market Book</span></h1>
+        <nav>
+          <ul>
+            <a href="/target/classes/templates/html/ClienteMenu.html">
+              <li>Home</li>
+            </a>
+            <a href="/target/classes/templates/html/ClienteConta.html">
+              <li>Conta</li>
+            </a>
+          </ul>
+        </nav>
+        <div class="nav-icon-container">
+          <a href="/target/classes/templates/html/ClienteConta.html">
+            <img src="/target/classes/templates/img/CarrinhoCompra.svg" alt="Carrinho">
+          </a>
+          <img src="/target/classes/templates/img/menu.png" alt="Menu" class="menu-button">
+        </div>
+      </div>
+    </div>
+    <div class="separacao">
+      <div class="info">
+        <p class="resumo" name="resumo">Suas Informações</p>
+        <div class="itens">
+          <ul>
+            <li class="nome">Nome</li>
+            <li class="email">Email</li>
+            <li class="genero">Gênero</li>
+            <li class="data">Data de nascimento</li>
+          </ul>
+        </div>
+        <div class="botoes">
+          <button class="buttonadd" id="buttonDeslog">Deslogar</button>
+          <button class="buttonadd" id="buttonadd">Meus Endereços</button>
+            <button class="buttonadd" id="buttonPedidos">Meus Pedidos</button>
+        </a>
+        </div>
+      </div>
+
+    </div>
+    <script src="/target/classes/templates/js/ClienteConta.js"></script>
+    <script>
+      var botao = document.getElementById('buttonadd');
+
+
+      botao.addEventListener('click', function () {
+
+        window.location.href = 'ClienteVerifiEndereco.html';
+
+
+      });
+
+      var botao = document.getElementById('buttonDeslog');
+
+
+      botao.addEventListener('click', function () {
+
+        localStorage.removeItem("loggedIn");
+        localStorage.removeItem("clienteId");
+        window.location.href = 'ClienteMenu.html';
+
+      });
+    </script>
+  </div>
+</body>
+
+</html>

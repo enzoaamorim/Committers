@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #2c2c2c;
+}
+
+/* Ajustes no cabeçalho */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  background-color: #000921;
+  border-bottom: 1px solid white;
+}
+
+/* Estilo do logotipo */
+.header a img {
+  transition: transform 0.2s ease, filter 0.2s ease; /* Suaviza o movimento e a cor */
+}
+
+.header a img:hover {
+  transform: translateY(-3px); /* Leve movimento para cima */
+  filter: brightness(1.2); /* Leve aumento de brilho para destacar */
+}
+
+/* Centraliza a navegação */
+.nav-links {
+  margin-left: 130px;
+}
+
+/* Estilo padrão do link e navegação */
+.nav-links a {
+  margin: 0 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Classe para ícones com texto centralizado */
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-text i {
+  font-size: 26px; /* Ajustado para um tamanho menor */
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.icon-text span {
+  font-size: 17px; /* Tamanho menor e consistente */
+  color: white;
+  transition: color 0.2s ease;
+}
+
+/* Efeito discreto ao passar o mouse */
+.icon-text:hover {
+  transform: translateY(-3px);
+  color: #d1d1d1;
+}
+
+.icon-text:hover i, .icon-text:hover span {
+  color: #d1d1d1;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Garante que a página ocupe no mínimo a altura da janela */
+  overflow: visible; /* Permite que o conteúdo extra force o scroll */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/committers/src/main/resources/templates/img/img-fundoCommitters4.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.separacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Define uma largura máxima para centralizar o conteúdo */
+  z-index: 1;
+  padding-bottom: 20px;
+}
+
+.carousel-container {
+  position: relative;
+  top: 40px; /* Fixa o carrossel no topo da seção */
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+  z-index: 10; /* Garante que o carrossel fique acima de outros elementos */
+}
+
+
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 2s ease-in-out, transform 2s ease;
+  opacity: 0;
+  transform: scale(1.05); /* Efeito de zoom */
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1); /* Tamanho normal quando ativo */
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Preenche o contêiner completamente */
+  border-radius: 8px;
+}
+
+@keyframes fade {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  10%,
+  90% {
+    opacity: 1;
+  }
+}
+
+/* Título do formulário */
+.Texto {
+  color: #ffffff; /* Cor branca para contraste */
+  font-size: 45px; /* Aumenta o tamanho da fonte */
+  font-weight: bold;
+  margin-top: -5px;
+  margin-bottom: 65px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma leve sombra para destaque */
+  text-align: center;
+}
+
+.renderizados {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.div-produto {
+  width: 250px;
+  height: 250px;
+  background-color: #131313;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  border-radius: 5%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 5fr;
+  overflow: hidden;
+  transition: transform 0.25s;
+  border: 1px solid #fb1010;
+  margin-top: 5px;
+}
+
+.div-produto:hover {
+  transform: scale(1.03);
+}
+
+.div-produto img {
+  max-width: 100%;
+  border-radius: 5% 5% 0 0;
+  justify-self: center;
+}
+
+.div-produto span:nth-child(2) {
+  color: #fff;
+  justify-self: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.div-produto span:nth-child(3) {
+  justify-self: start;
+  color: #fb1010;
+  font-weight: bold;
+  font-size: 26px;
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+#listaProdutos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+a {
+  text-decoration: none;
+}
