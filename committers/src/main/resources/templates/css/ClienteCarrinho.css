@@ -6,82 +6,138 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #eb0808;
+  background-color: #2c2c2c;
 }
 
-.header-inner-content {
-  max-width: 1300px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.navbar {
-  background-color: #000000;
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  box-shadow: 10px 0px 10px #2c2c2c;
-  z-index: 99;
-}
-
-.navbar > div {
+/* Ajustes no cabeçalho */
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 25px;
+  background-color: #000921;
+  border-bottom: 1px solid white;
 }
 
-.logo {
-  color: #fd0000;
+/* Estilo do logotipo */
+.header a img {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  /* Suaviza o movimento e a cor */
 }
 
-.logo span {
-  color: aliceblue;
+.header a img:hover {
+  transform: translateY(-3px);
+  /* Leve movimento para cima */
+  filter: brightness(1.2);
+  /* Leve aumento de brilho para destacar */
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  align-items: center;
+/* Centraliza a navegação */
+.nav-links {
+  margin-left: 130px;
 }
 
-.nav-icon-container {
-  display: flex;
-  align-items: center;
-}
-
-.nav-icon-container img {
-  width: 30px;
-  cursor: pointer;
-}
-
-.nav-icon-container img:first-child {
-  margin-right: 1rem;
-}
-
-nav ul li {
+/* Estilo padrão do link e navegação */
+.nav-links a {
+  margin: 0 20px;
   color: white;
-  margin-right: 1.5rem;
-  cursor: pointer;
-}
-
-nav ul li:hover {
-  transform: translateY(-5px);
-  transition: all 0.2s;
+  text-decoration: none;
   font-weight: bold;
+  font-size: 20px;
 }
 
-.menu-button {
-  display: none;
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Classe para ícones com texto centralizado */
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-text i {
+  font-size: 26px;
+  /* Ajustado para um tamanho menor */
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.icon-text span {
+  font-size: 17px;
+  /* Tamanho menor e consistente */
+  color: white;
+  transition: color 0.2s ease;
+}
+
+/* Efeito discreto ao passar o mouse */
+.icon-text:hover {
+  transform: translateY(-3px);
+  color: #d1d1d1;
+}
+
+.icon-text:hover i,
+.icon-text:hover span {
+  color: #d1d1d1;
+}
+
+.container {
+  position: relative;
+  height: 93vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/committers/src/main/resources/templates/img/img-fundoCommitters4.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  opacity: 0.4;
+  z-index: -1;
 }
 
 .separacao {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
 }
 
-.separacao img {
-  border-radius: 10px;
+/* Título do formulário */
+.carrinho {
+  color: #ffffff;
+  /* Cor branca para contraste */
+  font-size: 50px;
+  /* Aumenta o tamanho da fonte */
+  font-weight: bold;
+  margin-top: -5px;
+  margin-bottom: 65px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Adiciona uma leve sombra para destaque */
+  text-align: center;
 }
 
 .div-fotos {
@@ -93,12 +149,11 @@ nav ul li:hover {
   flex-direction: column;
   align-items: center;
   color: aliceblue;
-  background-color: #4100f3;
+  background-color: #000921;
   width: 1000px;
   height: 700px;
-  margin-top: 100px;
   border-radius: 10px;
-  border: 1px solid #050505;
+  border: 1px solid white;
 }
 
 .carrinho {
@@ -109,23 +164,39 @@ nav ul li:hover {
 }
 
 .buttonadd {
-  background-color: #fc0000;
+  background-color: #000921;
   padding: 20px;
+  border: 2px solid white;
   border-radius: 10px;
   font-weight: bold;
   color: aliceblue;
-  margin-right: 15px;
-  margin-top: 60px;
+  margin-right: 13px;
+  margin-top: 33.2%;
   align-self: flex-end;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: fixed;
+}
+
+.buttonadd:hover {
+  background-color: #0c0644;
+  /* Cor de destaque ao passar o mouse */
+  transform: scale(1.05);
+  /* Pequeno efeito de aumento */
+}
+
+.buttonadd:active {
+  transform: scale(0.95);
+  /* Efeito de clique */
 }
 
 .info input {
-  background-color: #2c2c2c;
-  border: 1px solid #f57979;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
   padding: 10px;
-  border-radius: 5px;
   width: 300px;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .itens {
@@ -149,11 +220,11 @@ nav ul li:hover {
 }
 
 .total-valor {
-  color: #f57979;
+  color: white;
   font-weight: bold;
-  font-size: large;
-  margin-top: 20px;
-  margin-left: 750px;
+  font-size: 25px;
+  margin-top: 50px;
+  margin-left: 20px;
 }
 
 a {
@@ -163,13 +234,14 @@ a {
 .btnMais,
 .btnMenos,
 .btnDeletar {
-  background-color: #131313;
-  color: #f57979;
+  background-color: transparent;
+  color: white;
   padding: 4px;
   font-size: large;
-  border: 1px solid #f57979;
+  border: 1px solid white;
   width: 30px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .div-quantidade {
@@ -183,8 +255,9 @@ a {
   margin-top: 6px;
   margin-bottom: 6px;
 }
+
 .frete {
-  margin-top: 20px;
+  margin-top: 35px;
   margin-left: 20px;
 }
 
@@ -196,21 +269,30 @@ a {
 .frete input {
   margin-right: 10px;
   padding: 5px;
+  color: white;
 }
 
 .frete button {
   padding: 5px 10px;
-  background-color: #f57979;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
   color: white;
-  border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .frete button:hover {
-  background-color: #f57979;
+  background-color: #0c0644; /* Cor de destaque ao passar o mouse */
+  transform: scale(1.05); /* Pequeno efeito de aumento */
+}
+
+.frete button:active {
+  transform: scale(0.95); /* Efeito de clique */
 }
 
 #resultadoFrete {
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
   font-weight: bold;
 }

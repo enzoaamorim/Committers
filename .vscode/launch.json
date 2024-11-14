@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CommittersApplication<committers>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "pi.senac.committers.CommittersApplication",
+            "projectName": "committers",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -134,6 +134,7 @@ body {
   justify-content: center;
   margin-bottom: 80px;
   z-index: 10; /* Garante que o carrossel fique acima de outros elementos */
+  cursor: pointer;
 }
 
 
@@ -189,16 +190,16 @@ body {
 
 .div-produto {
   width: 250px;
-  height: 250px;
-  background-color: #131313;
+  height: 300px;
+  background-color: #000921;
   margin-left: 20px;
   margin-bottom: 20px;
-  border-radius: 5%;
+  border-radius: 15px;
   display: grid;
   grid-template-rows: 1fr 1fr 5fr;
   overflow: hidden;
   transition: transform 0.25s;
-  border: 1px solid #fb1010;
+  border: 2px solid white;
   margin-top: 5px;
 }
 
@@ -221,12 +222,13 @@ body {
 }
 
 .div-produto span:nth-child(3) {
-  justify-self: start;
-  color: #fb1010;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: white;
   font-weight: bold;
   font-size: 26px;
-  margin-top: 25px;
-  margin-left: 20px;
+  margin-top: 50px;
 }
 
 #listaProdutos {
