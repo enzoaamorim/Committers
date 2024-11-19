@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const url = new URLSearchParams(document.location.search);
   const usuarioId = url.get("id");
 
-  fetch(`http://localhost:8080/usuarios/${usuarioId}`)
+  fetch(`http://localhost:8080/usuario/${usuarioId}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Erro ao obter informações do usuário");
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       nivel: nivelValue,
     };
 
-    fetch(`http://localhost:8080/usuarios/${usuarioId}`, {
+    fetch(`http://localhost:8080/usuario/${usuarioId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

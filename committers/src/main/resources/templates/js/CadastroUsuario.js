@@ -20,12 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
           //return;
         //}
   
-        if (!isValidCPF(Icpf.value)) {
-          alert("CPF inválido!");
-          Icpf.classList.add("input-error");
-          return;
-        }
-  
         const userData = {
           nome: Inome.value,
           email: Iemail.value,

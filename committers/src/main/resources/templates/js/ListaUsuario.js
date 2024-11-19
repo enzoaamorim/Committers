@@ -1,7 +1,7 @@
 function listarUsuarios() {
   console.log("Iniciando a função listarUsuarios");
 
-  fetch("http://localhost:8080/usuarios", {
+  fetch("http://localhost:8080/usuario", {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -84,7 +84,7 @@ function listarUsuarios() {
 }
 
 function ativarUsuario(usuarioId) {
-  fetch(`http://localhost:8080/usuarios/${usuarioId}/ativar`, {
+  fetch(`http://localhost:8080/usuario/${usuarioId}/ativar`, {
     method: "PUT",
   })
     .then((response) => {
@@ -104,7 +104,7 @@ function ativarUsuario(usuarioId) {
 }
 
 function desativarUsuario(usuarioId) {
-  fetch(`http://localhost:8080/usuarios/${usuarioId}/desativar`, {
+  fetch(`http://localhost:8080/usuario/${usuarioId}/desativar`, {
     method: "PUT",
   })
     .then((response) => {

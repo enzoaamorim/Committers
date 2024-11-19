@@ -34,7 +34,7 @@ public class Usuario {
     private String senha;
 
     @NotBlank(message = "O cpf é obrigatório")
-    @Column(name = "cpf", length = 11, nullable = false, unique = true) // Nullable should be false for NotBlank fields
+    @Column(name = "cpf", length = 14, nullable = false, unique = true) // Nullable should be false for NotBlank fields
     private String cpf;
 
     @Column(name = "nivel", nullable = false)

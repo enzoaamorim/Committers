@@ -6,142 +6,210 @@
   
   body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ff0808;
+    background: linear-gradient(135deg, #000921, #1c3a57);
   }
   
-  .header-inner-content {
-    max-width: 1300px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .navbar {
-    background-color: #000000;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    box-shadow: 10px 0px 10px #2c2c2c;
-    z-index: 99;
-  }
-  
-  .navbar > div {
+  /* Ajustes no cabeçalho */
+  .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 10px 25px;
+    background-color: #000921;
+    border-bottom: 1px solid white;
   }
   
-  .logo {
-    color: #f70000;
+  /* Estilo do logotipo */
+  .header a img {
+    transition: transform 0.2s ease, filter 0.2s ease;
+    /* Suaviza o movimento e a cor */
   }
   
-  .logo span {
-    color: aliceblue;
+  .header a img:hover {
+    transform: translateY(-3px);
+    /* Leve movimento para cima */
+    filter: brightness(0.9);
+    /* Leve aumento de brilho para destacar */
   }
   
-  nav ul {
-    display: flex;
-    list-style: none;
-    align-items: center;
+  /* Centraliza a navegação */
+  .nav-links {
+    margin-left: 130px;
   }
   
-  .nav-icon-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-icon-container img {
-    width: 30px;
-    cursor: pointer;
-  }
-  
-  .nav-icon-container img:first-child {
-    margin-right: 1rem;
-  }
-  
-  nav ul li {
-    color: rgb(255, 255, 255);
-    margin-right: 1.5rem;
-    cursor: pointer;
-  }
-  
-  nav ul li:hover {
-    transform: translateY(-5px);
-    transition: all 0.2s;
+  /* Estilo padrão do link e navegação */
+  .nav-links a {
+    margin: 0 20px;
+    color: white;
+    text-decoration: none;
     font-weight: bold;
+    font-size: 20px;
+    transition: color 0.3s ease;
   }
   
-  .menu-button {
-    display: none;
+  .nav-links a:hover {
+    text-decoration: underline;
+    color: #ffc107;
   }
   
-  .separacao {
+  .icons {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
   
-  .separacao img {
+  /* Classe para ícones com texto centralizado */
+  .icon-text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .icon-text i {
+    font-size: 26px;
+    /* Ajustado para um tamanho menor */
+    color: white;
+    transition: color 0.2s ease;
+  }
+  
+  .icon-text span {
+    font-size: 17px;
+    /* Tamanho menor e consistente */
+    color: white;
+    transition: color 0.2s ease;
+  }
+  
+  /* Efeito discreto ao passar o mouse */
+  .icon-text:hover {
+    transform: translateY(-3px);
+    color: #d1d1d1;
+  }
+  
+  .icon-text:hover i,
+  .icon-text:hover span {
+    color: #ffc107;
+  }
+  
+  .container {
+    position: relative;
+    height: 93vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+  }
+  
+  /* Título do formulário */
+  .cadastro {
+    color: #ffffff;
+    /* Cor branca para contraste */
+    font-size: 50px;
+    /* Aumenta o tamanho da fonte */
+    font-weight: bold;
+    margin-top: -5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Adiciona uma leve sombra para destaque */
+    text-align: center;
+  }
+
+  .forma {
+    background-color: #000921;
+    color: #ffffff;
+    border: 2px solid white;
     border-radius: 10px;
-  }
-  
-  .div-fotos {
-    max-width: 100%;
+    font-size: large;
+    margin-top: 20px;
+    padding: 4px;
   }
   
   .info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: aliceblue;
-    background-color: #4400ff;
+    background-color: #000921;
     width: 500px;
     height: 400px;
-    margin-top: 100px;
-    border-radius: 10px;
-    border: 1px solid #2c2fee;
+    margin-top: 70px;
+    border-radius: 20px;
+    border: 2px solid white;
   }
-  
-  .pagamento {
-    color: aliceblue;
-    font-size: 35px;
-    font-weight: bold;
-    margin-top: 30px;
-  }
-  
-  .buttonadd {
-    background-color: #fb1010;
-    padding: 20px;
-    border-radius: 10px;
-    font-weight: bold;
-    color: aliceblue;
-    margin-right: 15px;
-    margin-top: 40px;
-  }
-  
+
   .info input {
-    background-color: #2c2c2c;
-    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: white;
+    /* Cor do texto */
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 300px;
     margin-top: 40px;
+    border: 2px solid white;
+    /* Borda na cor do menu */
+    font-size: 16px;
+    transition: all 0.3s ease;
   }
   
-  .forma {
-    background-color: #2c2c2c;
+  .info input:focus {
+    background-color: rgba(39, 32, 99, 0.3);
+    border-color: #ffffff;
+    /* Borda branca ao focar */
+    outline: none;
+  }
+  
+  /* Estilo para o placeholder dos inputs */
+  .info input::placeholder {
     color: #ffffff;
-    border: 1px solid #fb1010;
-    font-size: large;
-    margin-top: 20px;
-    padding: 4px;
+    /* Define a cor branca para o placeholder */
+    opacity: 0.8;
+    /* Ajuste a opacidade se necessário */
   }
   
   .preco {
-    color: #000000;
+    color: #ffffff;
+    /* Cor branca para contraste */
+    /* Aumenta o tamanho da fonte */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-weight: bold;
     font-size: 30px;
-    margin-top: 30px;
+    margin-top: 70px;
+    margin-bottom: 40px;
   }
+
+/* Botão de cadastro */
+.buttonadd {
+  width: 250px;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 18px;
+  margin-left: 6px;
+  background-color: #000921;
+  /* Cor que combina com o menu */
+  padding: 15px 30px;
+  font-weight: bold;
+  color: #ffffff;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttonadd:hover {
+  background-color: #0c0644;
+  /* Cor de destaque ao passar o mouse */
+  transform: scale(1.05);
+  /* Pequeno efeito de aumento */
+}
+
+.buttonadd:active {
+  transform: scale(0.95);
+  /* Efeito de clique */
+}
   
   a {
     text-decoration: none;

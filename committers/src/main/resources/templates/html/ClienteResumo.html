@@ -4,37 +4,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resumo</title>
+
+  <title>Resumo - Pedido</title>
+  <link rel="icon" href="/committers/src/main/resources/templates/img/img-committers.png" type="image/x-icon">
+
   <link rel="stylesheet" href="/committers/src/main/resources/templates/css/ClienteResumo.css">
+  <link rel='stylesheet'
+  href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
 </head>
 
 <body>
-  <div class="container">
-    <div class="navbar">
-      <div class="header-inner-content">
-        <h1 class="logo">Market Book</span></h1>
-        <nav>
-          <ul>
-            <a href="/target/classes/templates/html/ClienteMenu.html">
-              <li>Home</li>
-            </a>
-            <a href="/target/classes/templates/html/ClienteConta.html">
-              <li>Conta</li>
-            </a>
-          </ul>
-        </nav>
-        <div class="nav-icon-container">
-          <a href="/target/classes/templates/html/ClienteCarrinho.html">
-            <img src="/target/classes/templates/img/CarrinhoCompra.svg" alt="Carrinho">
-          </a>
-          <img src="/target/classes/templates/img/menu.png" alt="Menu" class="menu-button">
-        </div>
-      </div>
+
+  <header class="header">
+    <a href="/committers/src/main/resources/templates/html/ClienteMenu.html">
+      <img src="/committers/src/main/resources/templates/img/img-committers.png" alt="Logo do E-commerce" width="40"
+        height="40">
+    </a>
+
+    <nav class="nav-links">
+      <a href="/committers/src/main/resources/templates/html/ClienteMenu.html">Home</a>
+      <a href="/committers/src/main/resources/templates/html/ClienteConta.html">Conta</a>
+    </nav>
+
+    <div class="icons">
+      <a href="/committers/src/main/resources/templates/html/ClienteCarrinho.html" class="compras icon-text">
+        <i class="fi fi-rr-cart-shopping-fast"></i>
+        <span>Carrinho</span>
+      </a>
+      <a href="/committers/src/main/resources/templates/html/LoginCliente.html" class="user icon-text">
+        <i class="fi fi-rr-circle-user"></i>
+        <span>Login</span>
+      </a>
     </div>
+    </div>
+  </header>
+
+  <div class="container">
     <div class="separacao">
       <div class="info">
         <p class="resumo" name="resumo">Resumo do Pedido</p>
-        <div class="itens"></div>
+        <div class="renderizados">
+          <ul id="listaCarrinho"></ul>
+        </div>
         <button class="buttonadd">Confirmar Pedido</button>
       </div>
     </div>

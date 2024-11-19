@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #2c2c2c;
+  background: linear-gradient(135deg, #000921, #1c3a57);
 }
 
 /* Ajustes no cabeçalho */
@@ -26,7 +26,7 @@ body {
 
 .header a img:hover {
   transform: translateY(-3px); /* Leve movimento para cima */
-  filter: brightness(1.2); /* Leve aumento de brilho para destacar */
+  filter: brightness(0.9); /* Leve aumento de brilho para destacar */
 }
 
 /* Centraliza a navegação */
@@ -41,10 +41,12 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
   text-decoration: underline;
+  color: #ffc107;
 }
 
 .icons {
@@ -83,7 +85,7 @@ body {
 }
 
 .icon-text:hover i, .icon-text:hover span {
-  color: #d1d1d1;
+  color: #ffc107;
 }
 
 .container {
@@ -96,26 +98,19 @@ body {
   align-items: center; /* Centraliza verticalmente */
 }
 
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url(/committers/src/main/resources/templates/img/img-fundoCommitters4.jpg);
-  background-size: cover;
-  background-position: center;
-  filter: blur(4px);
-  opacity: 0.4;
-  z-index: -1;
-}
-
 .separacao {
+  border-radius: 20px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.9);
+  max-width: 550px;
+  width: 100%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1;
+  justify-content: center;
 }
 
 /* Título do formulário */
@@ -123,7 +118,7 @@ body {
   color: #ffffff; /* Cor branca para contraste */
   font-size: 50px; /* Aumenta o tamanho da fonte */
   font-weight: bold;
-  margin-top: -5px;
+  margin-top: 10px;
   margin-bottom: 65px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma leve sombra para destaque */
   text-align: center;
@@ -146,7 +141,7 @@ body {
   background-color: transparent;
   color: white; /* Cor do texto */
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 15px;
   width: 300px;
   margin-top: 20px;
   border: 2px solid white; /* Borda na cor do menu */
@@ -155,7 +150,7 @@ body {
 }
 
 .info input:focus {
-  background-color: rgba(39, 32, 99, 0.3);
+  background-color: rgba(0, 9, 33, 0.35);
   border-color: #ffffff; /* Borda branca ao focar */
   outline: none;
 }
@@ -168,9 +163,9 @@ body {
 
 /* Botão de cadastro */
 .buttonadd {
-  background-color: #000921; /* Cor que combina com o menu */
+  background: linear-gradient(135deg, #000921, #1c3a57);
   padding: 15px 30px;
-  border-radius: 8px;
+  border-radius: 20px;
   font-weight: bold;
   color: #ffffff;
   font-size: 18px;
@@ -181,8 +176,10 @@ body {
 }
 
 .buttonadd:hover {
-  background-color: #0c0644; /* Cor de destaque ao passar o mouse */
-  transform: scale(1.05); /* Pequeno efeito de aumento */
+  background: linear-gradient(135deg, #1c3a57, #000921);
+  /* Cor de destaque ao passar o mouse */
+  transform: scale(1.05);
+  /* Pequeno efeito de aumento */
 }
 
 .buttonadd:active {

@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
           })
           .then(function (data) {
             console.log("Endereço cadastrado:", data);
-            window.location.href = "ClienteMenu.html";
+            window.location.href = "ClienteCheckEndereco.html";
             limpar();
           })
           .catch(function (error) {

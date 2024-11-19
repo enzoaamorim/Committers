@@ -1,138 +1,261 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #000921, #1c3a57);
+}
+
+/* Ajustes no cabeçalho */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  background-color: #000921;
+  border-bottom: 1px solid white;
+}
+
+/* Estilo do logotipo */
+.header a img {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  /* Suaviza o movimento e a cor */
+}
+
+.header a img:hover {
+  transform: translateY(-3px);
+  /* Leve movimento para cima */
+  filter: brightness(0.9);
+  /* Leve aumento de brilho para destacar */
+}
+
+/* Centraliza a navegação */
+.nav-links {
+  margin-left: 130px;
+}
+
+/* Estilo padrão do link e navegação */
+.nav-links a {
+  margin: 0 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #ffc107;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Classe para ícones com texto centralizado */
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-text i {
+  font-size: 26px;
+  /* Ajustado para um tamanho menor */
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.icon-text span {
+  font-size: 17px;
+  /* Tamanho menor e consistente */
+  color: white;
+  transition: color 0.2s ease;
+}
+
+/* Efeito discreto ao passar o mouse */
+.icon-text:hover {
+  transform: translateY(-3px);
+  color: #d1d1d1;
+}
+
+.icon-text:hover i,
+.icon-text:hover span {
+  color: #ffc107;
+}
+
+.container {
+  position: relative;
+  height: calc(100vh - 80px);
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.box {
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.9);
+  max-width: 1100px;
+  width: 100%;
+  height: 70%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Título do formulário */
+h1 {
+  color: #ffffff;
+  /* Cor branca para contraste */
+  font-size: 50px;
+  /* Aumenta o tamanho da fonte */
+  font-weight: bold;
+  margin-top: -100px;
+  margin-bottom: 65px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Adiciona uma leve sombra para destaque */
+  text-align: center;
+}
+
+input {
+  width: 300px;
+  height: 30px;
+  border-radius: 8px;
+  padding: 0 15px;
+  margin-bottom: 10px;
+}
+
+#add {
+  background: linear-gradient(135deg, #000921, #1c3a57);
+  color: #ffffff;
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 15px;
+  margin-left: 87%;
+}
+
+#add:hover {
+  background: linear-gradient(135deg, #1c3a57, #000921);
+  /* Cor de destaque ao passar o mouse */
+  transform: scale(1.05);
+  /* Pequeno efeito de aumento */
+}
+
+#add:active {
+  transform: scale(0.95);
+  /* Efeito de clique */
+}
+
+.cabecalho {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #000921;
+  border-radius: 15px 15px 15px 15px;
+  padding: 5px;
+}
+
+.cabecalho span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 2px;
+}
+
+.div-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-self: center;
+  gap: 10px;
   
-  .container {
-    background-image: url(/target/classes/templates/img/FundoCadastro.jpeg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  h1 {
-    margin: 40px 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 50px;
-  }
-  
-  .box {
-    background-color: rgba(255, 255, 255, 0.0);  
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    gap: 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.0);
-  }
-  
-  input {
-    width: 300px;
-    height: 30px;
-    border-radius: 8px;
-    padding: 0 15px;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    width: 100px;
-    height: 35px;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .cabecalho {
-    width: 1000px;
-    margin: 0 auto;
-    background-color: rgb(255, 0, 0);
-    border-radius: 10px 10px 0 0;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .cabecalho span {
-    display: inline-block;
-    font-size: large;
-    font-weight: bold;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  
-  p,
-  button {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .renderizados {
-    width: 1000px;
-    padding-top: 0;
-    margin-top: 0;
-  }
-  
-  #add {
-    align-self: flex-end;
-    background-color: rgb(255, 0, 0);
-    color: #fff;
-    border-radius: 20px;
-    padding: 40px;
-    justify-content: center;
-  }
-  
-  .div-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-self: center;
-  }
-  
-  .div-buttons button {
-    justify-content: center;
-  }
-  
-  .div-produto {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    border: 1px solid rgb(219, 9, 9);
-    padding-left: 10px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .div-produto span {
-    align-self: center;
-  }
-  
-  .div-alterar {
-    align-self: center;
-  }
-  
-  .id {
-    margin-left: 10px;
-  }
-  .nome {
-    margin-left: 42px;
-  }
-  
-  .preco {
-    margin-left: 75px;
-  }
-  
-  .quant {
-    margin-left: 55px;
-  }
-  
-  .status {
-    margin-left: 50px;
-  }
-  
+}
+
+.div-buttons button {
+  justify-content: center;
+  background-color: #000921;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.div-produto {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  border-bottom: 1px solid #ffffff;
+  padding: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+}
+
+.div-produto span {
+  align-self: center;
+  color: #e5e9ec;
+  font-size: 16px;
+}
+
+.div-alterar {
+  align-self: center;
+}
+
+.id {
+  margin-left: 10px;
+}
+
+.nome {
+  margin-left: 100px;
+}
+
+.preco {
+  margin-left: 75px;
+}
+
+.quant {
+  margin-left: 55px;
+}
+
+.status {
+  margin-left: 50px;
+}

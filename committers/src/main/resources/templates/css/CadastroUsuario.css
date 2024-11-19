@@ -3,22 +3,120 @@
   padding: 0;
 }
 
-.container {
-  background-image: url(/target/classes/templates/img/FundoCadastro.jpeg);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #000921, #1c3a57);
 }
 
-h1 {
-  margin: 40px 0;
-  font-family: Arial, Helvetica, sans-serif;
+/* Ajustes no cabeçalho */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  background-color: #000921;
+  border-bottom: 1px solid white;
+}
+
+/* Estilo do logotipo */
+.header a img {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  /* Suaviza o movimento e a cor */
+}
+
+.header a img:hover {
+  transform: translateY(-3px);
+  /* Leve movimento para cima */
+  filter: brightness(0.9);
+  /* Leve aumento de brilho para destacar */
+}
+
+/* Centraliza a navegação */
+.nav-links {
+  margin-left: 130px;
+}
+
+/* Estilo padrão do link e navegação */
+.nav-links a {
+  margin: 0 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #ffc107;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Classe para ícones com texto centralizado */
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-text i {
+  font-size: 26px;
+  /* Ajustado para um tamanho menor */
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.icon-text span {
+  font-size: 17px;
+  /* Tamanho menor e consistente */
+  color: white;
+  transition: color 0.2s ease;
+}
+
+/* Efeito discreto ao passar o mouse */
+.icon-text:hover {
+  transform: translateY(-3px);
+  color: #d1d1d1;
+}
+
+.icon-text:hover i,
+.icon-text:hover span {
+  color: #ffc107;
+}
+
+.container {
+  position: relative;
+  height: 93vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+}
+
+/* Título do formulário */
+.cadastro {
+  color: #ffffff;
+  /* Cor branca para contraste */
   font-size: 50px;
+  /* Aumenta o tamanho da fonte */
+  font-weight: bold;
+  margin-top: -5px;
+  margin-bottom: 75px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Adiciona uma leve sombra para destaque */
+  text-align: center;
 }
 
 .box {
@@ -39,7 +137,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
 }
 
 .form {
@@ -50,15 +148,97 @@ h1 {
 }
 
 input {
-  width: 300px;
-  height: 30px;
+  background-color: transparent;
+  color: white;
+  /* Cor do texto */
+  padding: 10px;
   border-radius: 8px;
-  padding: 0 15px;
-  margin-bottom: 10px;
+  width: 300px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 2px solid white;
+  /* Borda na cor do menu */
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
-button {
+input:focus {
+  background-color: rgba(39, 32, 99, 0.3);
+  border-color: #ffffff;
+  /* Borda branca ao focar */
+  outline: none;
+}
+
+/* Estilo para o placeholder dos inputs */
+input::placeholder {
+  color: #ffffff;
+  /* Define a cor branca para o placeholder */
+  opacity: 0.8;
+  /* Ajuste a opacidade se necessário */
+}
+
+/* Estilo para o select */
+select.nivel {
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
   width: 150px;
-  height: 35px;
+  border: 2px solid white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  appearance: none;
+  /* Remove a seta padrão */
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+/* Cor de fundo ao focar no select */
+select.nivel:focus {
+  background-color: rgba(39, 32, 99, 0.25);
+  border-color: #ffffff;
+  outline: none;
+}
+
+/* Estilo para os options */
+select.nivel option {
+  background-color: #272063;
+  color: white;
+  padding: 10px;
+}
+
+/* Estilo para o placeholder */
+select.nivel option[value=""][disabled] {
+  display: none;
+  /* Opcional: oculta o valor de placeholder */
+}
+
+/* Botão de cadastro */
+button {
+  width: 200px;
+  height: 50px;
   border-radius: 20px;
+  font-size: 18px;
+  margin-left: 6px;
+  background-color: #000921;
+  /* Cor que combina com o menu */
+  padding: 15px 30px;
+  font-weight: bold;
+  color: #ffffff;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0c0644;
+  /* Cor de destaque ao passar o mouse */
+  transform: scale(1.05);
+  /* Pequeno efeito de aumento */
+}
+
+button:active {
+  transform: scale(0.95);
+  /* Efeito de clique */
 }

@@ -2,36 +2,63 @@
 <html lang="PT-BR">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/dev/target/classes/templates/css/AlterarProduto.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
-  <title>Tela de Produtos</title>
+
+  <title>Alterar - Produto</title>
+  <link rel="icon" href="/committers/src/main/resources/templates/img/img-committers.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/committers/src/main/resources/templates/css/AlterarProduto.css">
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
+
+  <header class="header">
+    <a href="/committers/src/main/resources/templates/html/ClienteMenu.html"> 
+      <img src="/committers/src/main/resources/templates/img/img-committers.png" alt="Logo do E-commerce" width="40" height="40">
+    </a>
+
+    <nav class="nav-links">
+      <a href="/committers/src/main/resources/templates/html/ClienteMenu.html">Home</a>
+      <a href="/committers/src/main/resources/templates/html/ClienteConta.html">Conta</a>
+    </nav>
+
+    <div class="icons">
+      <a href="/committers/src/main/resources/templates/html/ClienteCarrinho.html" class="compras icon-text">
+        <i class="fi fi-rr-cart-shopping-fast"></i>
+        <span>Carrinho</span>
+      </a>
+        <a href="/committers/src/main/resources/templates/html/LoginCliente.html" class="user icon-text">
+          <i class="fi fi-rr-circle-user"></i>
+          <span>Login</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
   <div class="container">
     <div class="box">
-      <h1>Tela de produtos</h1>
+
+      <p class="cadastro" name="cadastro">Alterar Produto</p>
+
       <div class="separacao">
         <div>
           <div class="fotos"></div>
-          <button class="butImg">+</button>
+          <button class="butImg"><</button>
           <button class="butImg">></button>
         </div>
         <div class="inputs">
           <form id="formAltProdutos">
-            <p>Nome do Produto:</p>
             <input type="text" id="nome" class="nome" name="nome" placeholder="Nome do produto" required>
-            <p>Preço:</p>
             <input type="text" id="valor" class="valor" name="valor" placeholder="Valor" maxlength="11" pattern="\d*" required>
-            <p>Quantidade:</p>
             <input type="text" class="quantidade" name="quantidade" placeholder="Quantidade" required>
-            <p>Nota de Avaliação (1 a 5):</p>
-            <input type="text" class="avaliacao" name="avaliacao" placeholder="Avaliação" required>
-            <p>Descrição:</p>
+            <input type="text" class="avaliacao" name="avaliacao" placeholder="Avaliação (1 a 5)" required>
             <input type="text" class="descricao" name="descricao" placeholder="Descrição Detalhada" required>
             <div>
               <button id="cancelar">Cancelar</button>
@@ -42,7 +69,9 @@
       </div>
     </div>
   </div>
-    <script src="/target/classes/templates/js/AlterarProduto.js"></script>
+
+    <script src="/committers/src/main/resources/templates/js/AlterarProduto.js"></script>
+
     <script>
       var botao = document.getElementById('cancelar');
 
@@ -51,6 +80,7 @@
 
         window.location.href = 'ListaProduto.html';
       });</script>
+
 </body>
 
 </html>

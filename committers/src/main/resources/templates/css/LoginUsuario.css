@@ -1,62 +1,209 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+}
 
- 
-  
-  .container {
-    background-image: url(/target/classes/templates/img/FundoLogin.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  h1 {
-    margin: 20px 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 50px;
-    color: #e5e9ec;
-  }
-  
-  .box {
-    background-color: rgba(255, 255, 255, 0.0);  
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    gap: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.0);
-  }
-  
-  #formLogin {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-  }
-  
-  input {
-    width: 300px;
-    height: 40px;
-    border-radius: 8px;
-    padding: 0 15px;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    width: 200px;
-    height: 45px;
-    border-radius: 20px;
-  }
-  
- 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #000921, #1c3a57);
+}
+
+/* Ajustes no cabeçalho */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  background-color: #000921;
+  border-bottom: 1px solid white;
+}
+
+/* Estilo do logotipo */
+.header a img {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  /* Suaviza o movimento e a cor */
+}
+
+.header a img:hover {
+  transform: translateY(-3px);
+  /* Leve movimento para cima */
+  filter: brightness(0.9);
+  /* Leve aumento de brilho para destacar */
+}
+
+/* Centraliza a navegação */
+.nav-links {
+  margin-left: 130px;
+}
+
+/* Estilo padrão do link e navegação */
+.nav-links a {
+  margin: 0 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #ffc107;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Classe para ícones com texto centralizado */
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-text i {
+  font-size: 26px;
+  /* Ajustado para um tamanho menor */
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.icon-text span {
+  font-size: 17px;
+  /* Tamanho menor e consistente */
+  color: white;
+  transition: color 0.2s ease;
+}
+
+/* Efeito discreto ao passar o mouse */
+.icon-text:hover {
+  transform: translateY(-3px);
+  color: #d1d1d1;
+}
+
+.icon-text:hover i,
+.icon-text:hover span {
+  color: #ffc107;
+}
+
+.container {
+  position: relative;
+  height: 93vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+}
+
+.box {
+  border-radius: 20px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.9);
+  max-width: 480px;
+  width: 100%;
+  height: 70%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Título do formulário */
+.login {
+  color: #ffffff;
+  /* Cor branca para contraste */
+  font-size: 50px;
+  /* Aumenta o tamanho da fonte */
+  font-weight: bold;
+  margin-top: -45px;
+  margin-bottom: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Adiciona uma leve sombra para destaque */
+  text-align: center;
+}
+
+#formLogin {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  position: relative;
+  z-index: 1;
+  /* Garante que o formulário esteja acima do fundo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: aliceblue;
+  background-color: rgba(255, 255, 255, 0.0);
+  width: 500px;
+  height: 660px;
+  border-radius: 10px;
+}
+
+input {
+  background-color: transparent;
+  color: white;
+  /* Cor do texto */
+  padding: 10px;
+  border-radius: 8px;
+  width: 300px;
+  margin-top: 20px;
+  border: 2px solid white;
+  /* Borda na cor do menu */
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  background-color: rgba(0, 9, 33, 0.35);
+  border-color: #ffffff;
+  /* Borda branca ao focar */
+  outline: none;
+}
+
+/* Estilo para o placeholder dos inputs */
+input::placeholder {
+  color: #ffffff;
+  /* Define a cor branca para o placeholder */
+  opacity: 0.8;
+  /* Ajuste a opacidade se necessário */
+}
+
+/* Botão de cadastro */
+button {
+  background: linear-gradient(135deg, #000921, #1c3a57);
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 60px;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #1c3a57, #000921);
+  /* Cor de destaque ao passar o mouse */
+  transform: scale(1.05);
+  /* Pequeno efeito de aumento */
+}
+
+button:active {
+  transform: scale(0.95);
+  /* Efeito de clique */
+}
