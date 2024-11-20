@@ -10,7 +10,7 @@
 
 ---------------------------------------------------------------------------------------------------
 
-## 💻 Resumo do projeto
+## 💻 Resumo do Projeto
 Committers é um sistema de e-commerce desenvolvido como parte de um projeto acadêmico para o curso de Análise e Desenvolvimento de Sistemas. 
 <br>O sistema é focado na venda de produtos de tecnologia, oferecendo funcionalidades modernas e intuitivas para diferentes tipos de usuários, como administradores, gerentes de estoque e clientes.
 
@@ -26,7 +26,7 @@ Committers é um sistema de e-commerce desenvolvido como parte de um projeto aca
 
 ---------------------------------------------------------------------------------------------------
 
-## ⚙️ Funcionalidades do projeto
+## ⚙️ Funcionalidades do Projeto
 
 - `Funcionalidade 1 - Gestão de Usuários:` O sistema permite o cadastro, edição e exclusão de usuários, com controle de permissões específicas para cada papel, como Administrador, Gerente de Estoque e Cliente.
 - `Funcionalidade 2 - Catálogo de Produtos:` Apresenta os produtos com detalhes e imagens, além de funcionalidades de busca e filtros para facilitar a navegação.
