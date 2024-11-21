@@ -95,7 +95,7 @@ body {
 
 .container {
   position: relative;
-  height: calc(100vh - 80px);
+  height: 91vh;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -103,20 +103,6 @@ body {
   align-items: center;
   flex-grow: 1;
   flex-direction: column;
-}
-
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-  filter: blur(5px);
-  opacity: 0.3;
-  z-index: -1;
 }
 
 .box {

@@ -19,14 +19,14 @@ function listarEnderecos() {
   })
     .then(function (resposta) {
       if (!resposta.ok) {
-        throw new Error("Erro ao carregar os endereços");
+        throw new Error(`Erro ao carregar os endereços: ${resposta.status}`);
       }
       return resposta.json();
     })
     .then(function (enderecos) {
       const listarEnderecosDiv = document.getElementById("listarEnderecos");
       listarEnderecosDiv.innerHTML = ""; // Limpar conteúdo anterior
-      
+
       if (enderecos.length === 0) {
         listarEnderecosDiv.innerHTML = "<p>Nenhum endereço cadastrado.</p>";
       } else {
@@ -35,10 +35,13 @@ function listarEnderecos() {
             <div class="endereco-item">
               <p><strong>CEP:</strong> ${endereco.cep}</p>
               <p><strong>Logradouro:</strong> ${endereco.logradouro}</p>
+              <p><strong>Número:</strong> ${endereco.numero}</p>
+              <p><strong>Complemento:</strong> ${endereco.complemento || "N/A"}</p>
               <p><strong>Bairro:</strong> ${endereco.bairro}</p>
               <p><strong>Cidade:</strong> ${endereco.cidade}</p>
               <p><strong>UF:</strong> ${endereco.uf}</p>
               <hr>
+              <button class="botao-selecionar" onclick="selecionarEndereco('${endereco.id}')">Selecionar</button>
             </div>
           `;
           listarEnderecosDiv.innerHTML += enderecoHTML;
@@ -55,6 +58,6 @@ function selecionarEndereco(enderecoId) {
   // Salvar o ID do endereço no localStorage
   localStorage.setItem("enderecoSelecionado", enderecoId);
 
-  // Redirecionar para a página de pagamento
-  window.location.href = "ClientePagamento.html";
+  // Redirecionar para a página de resumo
+  window.location.href = "ClienteResumo.html";
 }

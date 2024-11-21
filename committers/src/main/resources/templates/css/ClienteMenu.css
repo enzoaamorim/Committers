@@ -96,7 +96,7 @@ body {
 
 .container {
   position: relative;
-  height: 93vh;
+  height: 100%;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -192,8 +192,8 @@ body {
 }
 
 .div-produto {
-  width: 250px;
-  height: 300px;
+  width: 300px;
+  height: 400px;
   background-color: #000921;
   margin-left: 20px;
   margin-bottom: 20px;
@@ -221,7 +221,7 @@ body {
   justify-self: center;
   font-size: 18px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: -10px;
 }
 
 .div-produto span:nth-child(3) {
@@ -231,7 +231,7 @@ body {
   color: white;
   font-weight: bold;
   font-size: 26px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 #listaProdutos {

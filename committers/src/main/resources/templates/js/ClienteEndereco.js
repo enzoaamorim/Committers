@@ -3,12 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const userId = urlParams.get("id");
   
-    if (!userId || isNaN(userId) || userId <= 0) {
-      alert("ID de usuário inválido ou não fornecido.");
-    } else {
-      alert("ID do cliente: " + userId);
-    }
-  
     const cepInput = document.getElementById("cep");
     const logradouroInput = document.querySelector(".logradouro");
     const numeroInput = document.getElementById("numero");

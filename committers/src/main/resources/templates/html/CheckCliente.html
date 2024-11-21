@@ -9,7 +9,8 @@
   <link rel="icon" href="/committers/src/main/resources/templates/img/img-committers.png" type="image/x-icon">
 
   <link rel="stylesheet" href="/committers/src/main/resources/templates/css/CheckCliente.css">
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -43,22 +44,22 @@
 
   <div class="container">
     <div class="separacao">
-      <p class="cadastro" name="cadastro">Pagamento</p>
 
       <div class="info">
+
+        <p class="cadastro" name="cadastro">Pagamento</p>
 
         <select class="forma" name="forma" id="forma" required>
           <option value="1">Boleto</option>
           <option value="2">Cartão</option>
         </select>
-        
+
         <input type="text" id="inputBoleto" placeholder="Boleto Info">
         <input type="text" id="inputNum" placeholder="Número do Cartão">
         <input type="text" id="inputCod" placeholder="Código Verificador">
         <input type="text" id="inputNom" placeholder="Nome Completo">
         <input type="text" id="inputData" placeholder="Data de Vencimento">
         <input type="text" id="inputQuan" placeholder="Quantidade de Parcelas">
-        <p class="preco">R$1000</p>
         <button class="buttonadd" id="buttonadd">Finalizar Pagamento</button>
       </div>
     </div>

@@ -93,7 +93,7 @@ body {
 
 .container {
   position: relative;
-  height: 93.5vh;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -109,7 +109,7 @@ body {
   box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.9);
   max-width: 600px;
   width: 100%;
-  height: 80%;
+  height: 90%;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease-in-out;
@@ -118,6 +118,11 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+#formCadastro{
+  margin-top: 140px;
+}
+
 /* Título do formulário */
 .cadastro {
   color: #ffffff;
@@ -125,7 +130,6 @@ body {
   font-size: 50px;
   /* Aumenta o tamanho da fonte */
   font-weight: bold;
-  margin-top: 115px;
   margin-bottom: 60px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   /* Adiciona uma leve sombra para destaque */

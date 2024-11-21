@@ -1,185 +1,195 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-  
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #000921, #1c3a57);
-  }
-  
-  /* Ajustes no cabeçalho */
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 25px;
-    background-color: #000921;
-    border-bottom: 1px solid white;
-  }
-  
-  /* Estilo do logotipo */
-  .header a img {
-    transition: transform 0.2s ease, filter 0.2s ease; /* Suaviza o movimento e a cor */
-  }
-  
-  .header a img:hover {
-    transform: translateY(-3px); /* Leve movimento para cima */
-    filter: brightness(0.9); /* Leve aumento de brilho para destacar */
-  }
-  
-  /* Centraliza a navegação */
-  .nav-links {
-    margin-left: 130px;
-  }
-  
-  /* Estilo padrão do link e navegação */
-  .nav-links a {
-    margin: 0 20px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    text-decoration: underline;
-    color: #ffc107;
-  }
-  
-  .icons {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  /* Classe para ícones com texto centralizado */
-  .icon-text {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: white;
-    font-size: 14px;
-    text-decoration: none;
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-  
-  .icon-text i {
-    font-size: 26px; /* Ajustado para um tamanho menor */
-    color: white;
-    transition: color 0.2s ease;
-  }
-  
-  .icon-text span {
-    font-size: 17px; /* Tamanho menor e consistente */
-    color: white;
-    transition: color 0.2s ease;
-  }
-  
-  /* Efeito discreto ao passar o mouse */
-  .icon-text:hover {
-    transform: translateY(-3px);
-    color: #d1d1d1;
-  }
-  
-  .icon-text:hover i, .icon-text:hover span {
-    color: #ffc107;
-  }
-  
-  .container {
-    position: relative;
-    height: 93vh;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-  }
-  
-  .separacao {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1;
-  }
-  
-  /* Título do formulário */
-  .carrinho {
-    color: #ffffff; /* Cor branca para contraste */
-    font-size: 50px; /* Aumenta o tamanho da fonte */
-    font-weight: bold;
-    margin-top: -5px;
-    margin-bottom: 65px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma leve sombra para destaque */
-    text-align: center;
-  }
-  
-  .div-fotos {
-    max-width: 100%;
-  }
-  
-  .info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: aliceblue;
-    background-color: #000921;
-    width: 1000px;
-    height: 700px;
-    border-radius: 20px;
-    border: 2px solid white;
-  }
-  
-  .resumo {
-    color: aliceblue;
-    font-size: 35px;
-    font-weight: bold;
-    margin-top: 30px;
-  }
-  
-  .buttonadd {
-    background-color: #000921;
-    padding: 20px;
-    border: 2px solid white;
-    border-radius: 10px;
-    font-weight: bold;
-    color: aliceblue;
-    margin-right: 13px;
-    margin-top: 33.1%;
-    align-self: flex-end;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    position: relative;
-  }
-  
-  .buttonadd:hover {
-    background: linear-gradient(135deg, #000921, #1c3a57);
-    /* Cor de destaque ao passar o mouse */
-    transform: scale(1.05);
-    /* Pequeno efeito de aumento */
-  }
-  
-  .buttonadd:active {
-    transform: scale(0.95);
-    /* Efeito de clique */
-  }
-  
-  .info input {
-    background-color: transparent;
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 10px;
-    width: 300px;
-    margin-top: 10px;
-  }
-  
-  .itens {
-    width: 1000px;
-    height: 490px;
-  }
-  
-  a {
-    text-decoration: none;
-  }
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #000921, #1c3a57);
+}
+
+/* Ajustes no cabeçalho */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  background-color: #000921;
+  border-bottom: 1px solid white;
+}
+
+/* Estilo do logotipo */
+.header a img {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  /* Suaviza o movimento e a cor */
+}
+
+.header a img:hover {
+  transform: translateY(-3px);
+  /* Leve movimento para cima */
+  filter: brightness(0.9);
+  /* Leve aumento de brilho para destacar */
+}
+
+/* Centraliza a navegação */
+.nav-links {
+  margin-left: 130px;
+}
+
+/* Estilo padrão do link e navegação */
+.nav-links a {
+  margin: 0 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #ffc107;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Classe para ícones com texto centralizado */
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-text i {
+  font-size: 26px;
+  /* Ajustado para um tamanho menor */
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.icon-text span {
+  font-size: 17px;
+  /* Tamanho menor e consistente */
+  color: white;
+  transition: color 0.2s ease;
+}
+
+/* Efeito discreto ao passar o mouse */
+.icon-text:hover {
+  transform: translateY(-3px);
+  color: #d1d1d1;
+}
+
+.icon-text:hover i,
+.icon-text:hover span {
+  color: #ffc107;
+}
+
+.container {
+  position: relative;
+  height: 91vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+}
+
+.separacao {
+  border-radius: 20px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.9);
+  max-width: 75%;
+  width: 100%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Título do formulário */
+.resumo {
+  color: #ffffff;
+  /* Cor branca para contraste */
+  font-size: 50px;
+  /* Aumenta o tamanho da fonte */
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 65px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Adiciona uma leve sombra para destaque */
+  text-align: center;
+}
+
+.div-fotos {
+  max-width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: aliceblue;
+  width: 1000px;
+  height: 700px;
+  border-radius: 20px;
+}
+
+.buttonadd {
+  background: linear-gradient(135deg, #000921, #1c3a57);
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 20px;
+  font-weight: bold;
+  color: aliceblue;
+  margin-right: -45px;
+  margin-top: 41%;
+  align-self: flex-end;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: fixed;
+}
+
+.buttonadd:hover {
+  background: linear-gradient(135deg, #1c3a57, #000921);
+  /* Cor de destaque ao passar o mouse */
+  transform: scale(1.05);
+  /* Pequeno efeito de aumento */
+}
+
+.buttonadd:active {
+  transform: scale(0.95);
+  /* Efeito de clique */
+}
+
+.info input {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  margin-top: 10px;
+}
+
+.itens {
+  width: 1000px;
+  height: 490px;
+}
+
+a {
+  text-decoration: none;
+}

@@ -24,6 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => {
       console.error("Erro ao obter informações do produto:", error);
+      Swal.fire({
+        title: "Erro!",
+        text: "Não foi possível carregar as informações do produto.",
+        icon: "error",
+        confirmButtonText: "Tentar novamente",
+        confirmButtonColor: "#ff4d4d",
+      });
     });
 
   fetch(`http://localhost:8080/produtos/${id}/imagem`)
@@ -45,6 +52,13 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => {
       console.error("Erro ao obter imagem do produto:", error);
+      Swal.fire({
+        title: "Erro!",
+        text: "Não foi possível carregar a imagem do produto.",
+        icon: "error",
+        confirmButtonText: "Entendi",
+        confirmButtonColor: "#ff4d4d",
+      });
     });
 });
 
@@ -71,18 +85,38 @@ buttonAdd.addEventListener("click", function () {
       })
         .then((response) => {
           if (response.ok) {
-            alert("Produto adicionado ao carrinho com sucesso!");
-            window.location.href = "ClienteCarrinho.html";
+            Swal.fire({
+              title: "Adicionado!",
+              text: "Produto adicionado ao carrinho com sucesso!",
+              icon: "success",
+              confirmButtonText: "Ver Carrinho",
+              confirmButtonColor: "#1c3a57",
+            }).then(() => {
+              window.location.href = "ClienteCarrinho.html";
+            });
           } else {
             throw new Error("Erro ao adicionar produto ao carrinho");
           }
         })
         .catch((error) => {
           console.error("Erro ao adicionar produto ao carrinho:", error);
-          alert("Erro ao adicionar produto ao carrinho");
+          Swal.fire({
+            title: "Erro!",
+            text: "Não foi possível adicionar o produto ao carrinho.",
+            icon: "error",
+            confirmButtonText: "Entendi",
+            confirmButtonColor: "#ff4d4d",
+          });
         });
     })
     .catch((error) => {
       console.error("Erro ao obter imagem do produto:", error);
+      Swal.fire({
+        title: "Erro!",
+        text: "Não foi possível carregar a imagem do produto.",
+        icon: "error",
+        confirmButtonText: "Entendi",
+        confirmButtonColor: "#ff4d4d",
+      });
     });
 });
