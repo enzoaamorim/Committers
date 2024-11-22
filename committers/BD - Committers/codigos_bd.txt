@@ -1,5 +1,5 @@
-create database committers;
-use committers;
+CREATE DATABASE committers;
+USE committers;
 
 CREATE TABLE usuario (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -65,11 +65,6 @@ CREATE TABLE pedido(
     status VARCHAR(255) NOT NULL
 );
 
-select * from usuario; 
-select * from produtos;
-select * from clientes;
-select * from endereco;  	
-select * from carrinho;
-select * from pedido;
+SELECT * FROM xxxxx;
 
 DELETE FROM xxxxx WHERE id = xx;

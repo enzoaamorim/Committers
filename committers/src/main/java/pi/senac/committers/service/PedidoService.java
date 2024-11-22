@@ -23,12 +23,11 @@ public class PedidoService {
         return repository.findAll();
     }
 
-
     public Pedido criarPedido(Pedido pedido) {
-        return repository.save(pedido);
+        Pedido pedidoNovo = repository.save(pedido);
+        return pedidoNovo;
     }
 
-    
     public Pedido editarPedido(Integer id, Pedido pedidoAtualizado) {
         Optional<Pedido> optionalPedido = repository.findById(id);
 
