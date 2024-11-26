@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
           .then(function (res) {
             console.log(res);
-            window.location.href = "ListaUsuario.html";
+            window.location.href = "LoginUsuario.html";
             limpar();
           })
           .catch(function (error) {

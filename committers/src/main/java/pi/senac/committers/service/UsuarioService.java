@@ -11,60 +11,60 @@ import pi.senac.committers.modal.Usuario;
 
 @Service
 public class UsuarioService {
-        private IUsuario repository;
-        private PasswordEncoder passwordEncoder;
+    private IUsuario repository;
+    private PasswordEncoder passwordEncoder;
 
-        public UsuarioService(IUsuario repository){
-            this.repository = repository;
-            this.passwordEncoder = new BCryptPasswordEncoder();
+    public UsuarioService(IUsuario repository) {
+        this.repository = repository;
+        this.passwordEncoder = new BCryptPasswordEncoder();
+    }
+
+    public List<Usuario> listarUsuario() {
+        List<Usuario> lista = repository.findAll();
+        return lista;
+    }
+
+    public Usuario criaUsuario(Usuario usuario) {
+        String encoder = this.passwordEncoder.encode(usuario.getSenha());
+        usuario.setSenha(encoder);
+        Usuario usuarioNovo = repository.save(usuario);
+        return usuarioNovo;
+    }
+
+    public Usuario editarUsuario(Usuario usuario) {
+        String encoder = this.passwordEncoder.encode(usuario.getSenha());
+        usuario.setSenha(encoder);
+        Usuario usuarioNovo = repository.save(usuario);
+        return usuarioNovo;
+    }
+
+    public Usuario atualizarUsuario(Integer id, Usuario novoUsuario) {
+        Usuario usuarioExistente = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+        usuarioExistente.setNome(novoUsuario.getNome());
+        usuarioExistente.setCpf(novoUsuario.getCpf());
+
+        if (!passwordEncoder.matches(novoUsuario.getSenha(), usuarioExistente.getSenha())) {
+            String senhaCodificada = passwordEncoder.encode(novoUsuario.getSenha());
+            usuarioExistente.setSenha(senhaCodificada);
         }
-        public List<Usuario> listarUsuario(){
-          List<Usuario> lista = repository.findAll();
-          return lista;
-}
-public Usuario criaUsuario(Usuario usuario){
-  String encoder = this.passwordEncoder.encode(usuario.getSenha());
-  usuario.setSenha(encoder);
-  Usuario usuarioNovo = repository.save(usuario);
-  return usuarioNovo;
-}
-public Usuario editarUsuario(Usuario usuario){
-  String encoder = this.passwordEncoder.encode(usuario.getSenha());
-  usuario.setSenha(encoder);
-  Usuario usuarioNovo = repository.save(usuario);
-  return usuarioNovo;
-}
 
-public Usuario atualizarUsuario(Integer id, Usuario novoUsuario) {
-    
-    Usuario usuarioExistente = repository.findById(id)
-        .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        usuarioExistente.setNivel(novoUsuario.getNivel());
+        return repository.save(usuarioExistente);
+    }
 
-    usuarioExistente.setNome(novoUsuario.getNome());
-    usuarioExistente.setCpf(novoUsuario.getCpf());
-    
-    
-    String senhaCodificada = this.passwordEncoder.encode(novoUsuario.getSenha());
-    usuarioExistente.setSenha(senhaCodificada);
+    public Boolean validarSenha(Usuario usuario) {
 
-    
-    usuarioExistente.setNivel(novoUsuario.getNivel());
-
-    
-    return repository.save(usuarioExistente);
-}
-
-public Boolean validarSenha(Usuario usuario) {
-        
         Usuario usuarioExistente = repository.findByEmail(usuario.getEmail());
 
-        
         if (usuarioExistente != null && passwordEncoder.matches(usuario.getSenha(), usuarioExistente.getSenha())) {
-            return true; 
+            return true;
         } else {
-            return false; 
+            return false;
         }
     }
+
     public Integer buscarIdPorEmail(String email) {
         Usuario usuario = repository.findByEmail(email);
         if (usuario != null) {
@@ -79,7 +79,7 @@ public Boolean validarSenha(Usuario usuario) {
 
         if (optionalUsuario.isPresent()) {
             Usuario usuario = optionalUsuario.get();
-            return usuario.getStatus(); 
+            return usuario.getStatus();
         } else {
             throw new IllegalArgumentException("Usuário não encontrado para o ID fornecido");
         }

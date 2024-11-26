@@ -24,17 +24,16 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Erro ao obter informações do usuário:", error);
     });
 
-  document.querySelector("#botaoEditar").addEventListener("click", function () {
+  document.querySelector("#botaoEditar").addEventListener("click", function (e) {
+    e.preventDefault(); // Evita o comportamento padrão do formulário
+
     const nomeValue = nome.value;
-    const emailValue = email.value;
     const cpfValue = cpf.value;
     const senhaValue = senha.value;
     const nivelValue = nivel.value;
 
-    
     const usuario = {
       nome: nomeValue,
-      email: emailValue,
       cpf: cpfValue,
       senha: senhaValue,
       nivel: nivelValue,
@@ -52,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
           throw new Error("Erro ao editar usuário");
         }
         console.log("Usuário editado com sucesso!");
-        window.location.href = "listUsuarios.html";
+        window.location.href = "ListaUsuario.html";
       })
       .catch((error) => {
         console.error("Erro ao editar usuário:", error);

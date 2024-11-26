@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BackOffice ADMIN - Committers</title>
+  <link rel="icon" href="/committers/src/main/resources/templates/img/img-committers.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/committers/src/main/resources/templates/css/Backoffice.css">
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  
+</head>
+
+<body>
+
+  <header class="header">
+    <a href="/committers/src/main/resources/templates/html/ClienteMenu.html">
+      <img src="/committers/src/main/resources/templates/img/img-committers.png" alt="Logo do E-commerce" width="40"
+        height="40">
+    </a>
+
+    <nav class="nav-links">
+      <a href="/committers/src/main/resources/templates/html/CadastroUsuario.html">Cadastrar Usuário</a>
+      <a href="/committers/src/main/resources/templates/html/CadastroProduto.html">Cadastrar Produto</a>
+    </nav>
+
+    <div class="icons">
+      <a href="/committers/src/main/resources/templates/html/ClienteCarrinho.html" class="compras icon-text">
+        <i class="fi fi-rr-cart-shopping-fast"></i>
+        <span>Carrinho</span>
+      </a>
+      <a href="/committers/src/main/resources/templates/html/LoginCliente.html" class="user icon-text">
+        <i class="fi fi-rr-circle-user"></i>
+        <span>Login</span>
+      </a>
+    </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="box">
+      <p class="cadastro" name="cadastro">BackOffice - Admin</p>
+      <form id="formLogin">
+        <button type="button" onclick="listarProdutos()">Listar Produtos</button>
+        <button type="button" onclick="listarUsuarios()">Listar Usuarios</button>
+        <button type="button" onclick="listarPedidos()">Listar Pedidos</button>
+        <a href="LoginUsuario.html">Deslogar</a>
+      </form>
+    </div>
+  </div>
+  <script>
+    function listarProdutos() {
+      window.location.href = 'ListaProduto.html';
+    }
+
+    function listarUsuarios() {
+      window.location.href = 'ListaUsuario.html';
+    }
+
+    function listarPedidos() {
+      window.location.href = 'ListaPedido.html';
+    }
+  </script>
+</body>
+
+</html>
