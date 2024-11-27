@@ -112,7 +112,6 @@ public class UsuarioController {
         } else {
             return ResponseEntity.notFound().build();
         }
-
     }
 
 }

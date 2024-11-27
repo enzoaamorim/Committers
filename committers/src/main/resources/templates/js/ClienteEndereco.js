@@ -1,16 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Verificar ID do cliente na URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const userId = urlParams.get("id");
-  
-    const cepInput = document.getElementById("cep");
-    const logradouroInput = document.querySelector(".logradouro");
-    const numeroInput = document.getElementById("numero");
-    const complementoInput = document.getElementById("complemento");
-    const bairroInput = document.getElementById("bairro");
-    const cidadeInput = document.getElementById("cidade");
-    const ufInput = document.getElementById("uf");
-  
+  function configurarFormulario(idForm, prefixo) {
+    const formulario = document.getElementById(idForm);
+    const cepInput = document.getElementById(`cep${prefixo}`);
+    const logradouroInput = formulario.querySelector(".logradouro");
+    const numeroInput = document.getElementById(`numero${prefixo}`);
+    const complementoInput = document.getElementById(`complemento${prefixo}`);
+    const bairroInput = document.getElementById(`bairro${prefixo}`);
+    const cidadeInput = document.getElementById(`cidade${prefixo}`);
+    const ufInput = document.getElementById(`uf${prefixo}`);
+
     cepInput.addEventListener("change", function () {
       const cep = cepInput.value.replace("-", "");
       fetch(`https://viacep.com.br/ws/${cep}/json/`)
@@ -24,54 +22,42 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch((error) => console.error("Erro ao buscar CEP:", error));
     });
-  
-    const formulario = document.getElementById("formCadastro");
-  
-    if (formulario) {
-      formulario.addEventListener("submit", function (event) {
-        event.preventDefault();
-  
-        const userData = {
-          id: userId,
-          cep: cepInput.value,
-          logradouro: logradouroInput.value,
-          numero: numeroInput.value,
-          complemento: complementoInput.value,
-          bairro: bairroInput.value,
-          cidade: cidadeInput.value,
-          uf: ufInput.value,
-        };
-  
-        fetch("http://localhost:8080/endereco", {
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          method: "POST",
-          body: JSON.stringify(userData),
+
+    formulario.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const endereco = {
+        cep: cepInput.value,
+        logradouro: logradouroInput.value,
+        numero: numeroInput.value,
+        complemento: complementoInput.value,
+        bairro: bairroInput.value,
+        cidade: cidadeInput.value,
+        uf: ufInput.value,
+      };
+
+      fetch("http://localhost:8080/endereco", {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify(endereco),
+      })
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw new Error("Erro na resposta do servidor");
+          }
         })
-          .then(function (res) {
-            if (res.ok) {
-              return res.json();
-            } else {
-              throw new Error("Erro na resposta do servidor");
-            }
-          })
-          .then(function (data) {
-            console.log("Endereço cadastrado:", data);
-            window.location.href = "ClienteCheckEndereco.html";
-            limpar();
-          })
-          .catch(function (error) {
-            console.error("Erro ao enviar os dados:", error);
-          });
-      });
-  
-      function limpar() {
-        formulario.reset();
-      }
-    } else {
-      console.error("Formulário não encontrado!");
-    }
-  });
-  
+        .then((data) => {
+          console.log(`${prefixo} cadastrado:`, data);
+          formulario.reset();
+        })
+        .catch((error) => console.error(`Erro ao enviar ${prefixo}:`, error));
+    });
+  }
+
+  configurarFormulario("formEntrega", "Entrega");
+});

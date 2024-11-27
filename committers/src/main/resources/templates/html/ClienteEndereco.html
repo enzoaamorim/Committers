@@ -9,7 +9,8 @@
   <link rel="icon" href="/committers/src/main/resources/templates/img/img-committers.png" type="image/x-icon">
 
   <link rel="stylesheet" href="/committers/src/main/resources/templates/css/ClienteEndereco.css">
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -42,23 +43,45 @@
   </header>
 
   <div class="container">
-    <div class="separacao">
-      <div class="info">
-        <p class="cadastro" name="cadastro">Endereço</p>
-        <form id="formCadastro">
-          <input type="text" id="cep" name="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP" required>
-          <input type="text" class="logradouro" name="logradouro" placeholder="Logradouro" required>
-          <input type="text" id="numero" name="numero" placeholder="Numero" required>
-          <input type="text" id="complemento" name="complemento" placeholder="Complemento">
-          <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
-          <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
-          <input type="text" id="uf" name="uf" pattern="[A-Za-z]{2}" placeholder="UF" required>
-          <button class="buttonadd">Enviar Endereço</button>
-        </form>
+    <div class="container">
+      <!-- Endereço de Entrega -->
+      <div class="separacao">
+        <div class="info">
+          <p class="cadastro" name="cadastro">Endereço de Entrega</p>
+          <form id="formEntrega">
+            <input type="text" id="cepEntrega" name="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP" required>
+            <input type="text" class="logradouro" name="logradouro" placeholder="Logradouro" required>
+            <input type="text" id="numeroEntrega" name="numero" placeholder="Número" required>
+            <input type="text" id="complementoEntrega" name="complemento" placeholder="Complemento">
+            <input type="text" id="bairroEntrega" name="bairro" placeholder="Bairro" required>
+            <input type="text" id="cidadeEntrega" name="cidade" placeholder="Cidade" required>
+            <input type="text" id="ufEntrega" name="uf" pattern="[A-Za-z]{2}" placeholder="UF" required>
+            <button class="buttonadd" type="submit">Enviar Endereço de Entrega</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Endereço de Faturamento -->
+      <div class="separacao">
+        <div class="info">
+          <p class="cadastro" name="cadastro">Endereço de Faturamento</p>
+          <form id="formFaturamento">
+            <input type="text" id="cepFaturamento" name="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP" required>
+            <input type="text" class="logradouro" name="logradouro" placeholder="Logradouro" required>
+            <input type="text" id="numeroFaturamento" name="numero" placeholder="Número" required>
+            <input type="text" id="complementoFaturamento" name="complemento" placeholder="Complemento">
+            <input type="text" id="bairroFaturamento" name="bairro" placeholder="Bairro" required>
+            <input type="text" id="cidadeFaturamento" name="cidade" placeholder="Cidade" required>
+            <input type="text" id="ufFaturamento" name="uf" pattern="[A-Za-z]{2}" placeholder="UF" required>
+            <button class="buttonadd" type="submit">Enviar Endereço de Faturamento</button>
+          </form>
+        </div>
       </div>
     </div>
+
   </div>
   <script src="/committers/src/main/resources/templates/js/ClienteEndereco.js"></script>
+  <script src="/committers/src/main/resources/templates/js/ClienteEnderecoFAT.js"></script>
 </body>
 
 </html>

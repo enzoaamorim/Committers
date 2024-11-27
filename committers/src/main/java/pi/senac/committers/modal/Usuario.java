@@ -33,8 +33,8 @@ public class Usuario {
     @Column(name = "senha", columnDefinition = "TEXT", nullable = false) // Nullable should be false for NotBlank fields
     private String senha;
 
-    @NotBlank(message = "O cpf é obrigatório")
-    @Column(name = "cpf", length = 14, nullable = false, unique = true) // Nullable should be false for NotBlank fields
+    @NotBlank(message = "O CPF é obrigatório")
+    @Column(name = "cpf", length = 14, nullable = false, unique = true)
     private String cpf;
 
     @Column(name = "nivel", nullable = false)

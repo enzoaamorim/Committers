@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Conta - Cliente</title>
+    <link rel="icon" href="/committers/src/main/resources/templates/img/img-committers.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/committers/src/main/resources/templates/css/UsuarioConta.css">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+</head>
+
+<body>
+
+
+    <header class="header">
+        <a href="/committers/src/main/resources/templates/html/ClienteMenu.html">
+            <img src="/committers/src/main/resources/templates/img/img-committers.png" alt="Logo do E-commerce"
+                width="40" height="40">
+        </a>
+
+        <nav class="nav-links">
+            <a href="/committers/src/main/resources/templates/html/ClienteMenu.html">Home</a>
+            <a href="/committers/src/main/resources/templates/html/ClienteConta.html">Conta</a>
+        </nav>
+
+        <div class="icons">
+            <a href="/committers/src/main/resources/templates/html/ClienteCarrinho.html" class="compras icon-text">
+                <i class="fi fi-rr-cart-shopping-fast"></i>
+                <span>Carrinho</span>
+            </a>
+            <a href="/committers/src/main/resources/templates/html/LoginCliente.html" class="user icon-text">
+                <i class="fi fi-rr-circle-user"></i>
+                <span>Login</span>
+            </a>
+        </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="separacao">
+            <div class="info">
+                <p class="resumo" name="resumo">Seus Dados Pessoais</p>
+
+                <div class="itens">
+                    <ul>
+                        <li class="nome">Nome</li>
+                        <li class="email">Email</li>
+                        <li class="cpf">CPF</li>
+                    </ul>
+                </div>
+
+
+
+                <div class="botoes">
+                    <button class="buttonadd" id="buttonDeslog">Deslogar</button>
+                    <button class="buttonadd" id="buttonadd">Meus Endereços</button>
+                    <button class="buttonadd" id="buttonPedidos">Meus Pedidos</button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="/committers/src/main/resources/templates/js/UsuarioConta.js"></script>
+
+        <script>
+            var botao = document.getElementById('buttonadd');
+
+
+            botao.addEventListener('click', function () {
+
+                window.location.href = 'ClienteVerifiEndereco.html';
+
+
+            });
+
+            var botao = document.getElementById('buttonDeslog');
+
+
+            botao.addEventListener('click', function () {
+
+                localStorage.removeItem("loggedIn");
+                localStorage.removeItem("clienteId");
+                window.location.href = 'LoginUsuario.html';
+
+            });
+        </script>
+
+    </div>
+
+</body>
+
+</html>
