@@ -22,7 +22,6 @@
     </a>
 
     <nav class="nav-links">
-      <a href="/committers/src/main/resources/templates/html/CadastroUsuario.html">Cadastrar Usuário</a>
       <a href="/committers/src/main/resources/templates/html/CadastroProduto.html">Cadastrar Produto</a>
       <a href="/committers/src/main/resources/templates/html/UsuarioConta.html">Minha Conta</a>
     </nav>
@@ -42,10 +41,9 @@
 
   <div class="container">
     <div class="box">
-      <p class="cadastro" name="cadastro">BackOffice - Admin</p>
+      <p class="cadastro" name="cadastro">BackOffice - Estoquista</p>
       <form id="formLogin">
         <button type="button" onclick="listarProdutos()">Listar Produtos</button>
-        <button type="button" onclick="listarUsuarios()">Listar Usuarios</button>
         <button type="button" onclick="listarPedidos()">Listar Pedidos</button>
         <a href="LoginUsuario.html">Deslogar</a>
       </form>
@@ -54,10 +52,6 @@
   <script>
     function listarProdutos() {
       window.location.href = 'ListaProduto.html';
-    }
-
-    function listarUsuarios() {
-      window.location.href = 'ListaUsuario.html';
     }
 
     function listarPedidos() {

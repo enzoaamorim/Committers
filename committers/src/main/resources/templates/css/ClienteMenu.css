@@ -96,7 +96,7 @@ body {
 
 .container {
   position: relative;
-  height: 100%;
+  height: 93vh;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -117,61 +117,6 @@ body {
   padding-bottom: 20px;
 }
 
-.carousel-container {
-  position: relative;
-  top: 40px;
-  /* Fixa o carrossel no topo da seção */
-  width: 100%;
-  max-width: 1200px;
-  height: 500px;
-  overflow: hidden;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 80px;
-  z-index: 10;
-  /* Garante que o carrossel fique acima de outros elementos */
-  cursor: pointer;
-}
-
-.carousel-slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transition: opacity 2s ease-in-out, transform 2s ease;
-  opacity: 0;
-  transform: scale(1.05);
-  /* Efeito de zoom */
-}
-
-.carousel-slide.active {
-  opacity: 1;
-  transform: scale(1);
-  /* Tamanho normal quando ativo */
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Preenche o contêiner completamente */
-  border-radius: 8px;
-}
-
-@keyframes fade {
-
-  0%,
-  100% {
-    opacity: 0;
-  }
-
-  10%,
-  90% {
-    opacity: 1;
-  }
-}
-
 /* Título do formulário */
 .Texto {
   color: #ffffff;
@@ -179,7 +124,7 @@ body {
   font-size: 45px;
   /* Aumenta o tamanho da fonte */
   font-weight: bold;
-  margin-top: -5px;
+  margin-top: -290px;
   margin-bottom: 65px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   /* Adiciona uma leve sombra para destaque */
