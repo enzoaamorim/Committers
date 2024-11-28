@@ -1,8 +1,19 @@
 package pi.senac.committers.modal;
 
 import java.math.BigDecimal;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
@@ -28,9 +39,9 @@ public class Pedido {
     private Integer quantidade;
 
     @NotBlank(message = "O nome é obrigatório")
-     @Column(name = "nomeDoCli", length = 200, nullable = true)
-     private String nomeDoCli;
- 
+    @Column(name = "nomeDoCli", length = 200, nullable = true)
+    private String nomeDoCli;
+    
     @NotBlank(message = "CEP é obrigatório!")
     @Column(name = "cep", length = 9, nullable = true)
     private String cep;

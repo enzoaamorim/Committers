@@ -39,12 +39,11 @@
         <span>Login</span>
       </a>
     </div>
-    </div>
   </header>
 
   <div class="container">
-    <div class="container">
-      <!-- Endereço de Entrega -->
+    <!-- Etapa 1: Endereço de Entrega -->
+    <div class="form-step active" id="step1">
       <div class="separacao">
         <div class="info">
           <p class="cadastro" name="cadastro">Endereço de Entrega</p>
@@ -56,12 +55,14 @@
             <input type="text" id="bairroEntrega" name="bairro" placeholder="Bairro" required>
             <input type="text" id="cidadeEntrega" name="cidade" placeholder="Cidade" required>
             <input type="text" id="ufEntrega" name="uf" pattern="[A-Za-z]{2}" placeholder="UF" required>
-            <button class="buttonadd" type="submit">Enviar Endereço de Entrega</button>
+            <button type="button" class="buttonadd next-step" data-next="step2">Próximo</button>
           </form>
         </div>
       </div>
+    </div>
 
-      <!-- Endereço de Faturamento -->
+    <!-- Etapa 2: Endereço de Faturamento -->
+    <div class="form-step" id="step2">
       <div class="separacao">
         <div class="info">
           <p class="cadastro" name="cadastro">Endereço de Faturamento</p>
@@ -73,13 +74,44 @@
             <input type="text" id="bairroFaturamento" name="bairro" placeholder="Bairro" required>
             <input type="text" id="cidadeFaturamento" name="cidade" placeholder="Cidade" required>
             <input type="text" id="ufFaturamento" name="uf" pattern="[A-Za-z]{2}" placeholder="UF" required>
-            <button class="buttonadd" type="submit">Enviar Endereço de Faturamento</button>
+            <button type="button" class="buttonadd prev-step" data-prev="step1">Voltar</button>
+            <button type="submit" class="buttonadd">Finalizar</button>
           </form>
         </div>
       </div>
     </div>
-
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const nextButtons = document.querySelectorAll(".next-step");
+      const prevButtons = document.querySelectorAll(".prev-step");
+      const steps = document.querySelectorAll(".form-step");
+
+      nextButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const nextStep = document.getElementById(button.dataset.next);
+          steps.forEach((step) => step.classList.remove("active"));
+          nextStep.classList.add("active");
+        });
+      });
+
+      prevButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const prevStep = document.getElementById(button.dataset.prev);
+          steps.forEach((step) => step.classList.remove("active"));
+          prevStep.classList.add("active");
+        });
+      });
+
+      const formFaturamento = document.getElementById("formFaturamento");
+      formFaturamento.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("Formulário enviado!");
+        // Adicione aqui a integração com o backend
+      });
+    });
+  </script>
   <script src="/committers/src/main/resources/templates/js/ClienteEndereco.js"></script>
   <script src="/committers/src/main/resources/templates/js/ClienteEnderecoFAT.js"></script>
 </body>

@@ -5,8 +5,9 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import pi.senac.committers.repository.IPedido;
+import jakarta.transaction.Transactional;
 import pi.senac.committers.modal.Pedido;
+import pi.senac.committers.repository.IPedido;
 
 
 
@@ -22,7 +23,7 @@ public class PedidoService {
     public List<Pedido> listarPedido() {
         return repository.findAll();
     }
-
+@Transactional
     public Pedido criarPedido(Pedido pedido) {
         Pedido pedidoNovo = repository.save(pedido);
         return pedidoNovo;
