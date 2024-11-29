@@ -1,34 +1,28 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Endereços</title>
 
-  <title>Endereço - Cliente</title>
-  <link rel="icon" href="/committers/src/main/resources/templates/img/img-committers.png" type="image/x-icon">
-
+  <!-- CSS -->
   <link rel="stylesheet" href="/committers/src/main/resources/templates/css/ClienteEndereco.css">
-  <link rel='stylesheet'
-    href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
+  <!-- SweetAlert2 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-
   <header class="header">
     <a href="/committers/src/main/resources/templates/html/ClienteMenu.html">
-      <img src="/committers/src/main/resources/templates/img/img-committers.png" alt="Logo do E-commerce" width="40"
-        height="40">
+      <img src="/committers/src/main/resources/templates/img/img-committers.png" alt="Logo do E-commerce" width="40" height="40">
     </a>
-
     <nav class="nav-links">
       <a href="/committers/src/main/resources/templates/html/ClienteMenu.html">Home</a>
       <a href="/committers/src/main/resources/templates/html/ClienteConta.html">Conta</a>
     </nav>
-
     <div class="icons">
       <a href="/committers/src/main/resources/templates/html/ClienteCarrinho.html" class="compras icon-text">
         <i class="fi fi-rr-cart-shopping-fast"></i>
@@ -41,79 +35,44 @@
     </div>
   </header>
 
-  <div class="container">
-    <!-- Etapa 1: Endereço de Entrega -->
-    <div class="form-step active" id="step1">
-      <div class="separacao">
-        <div class="info">
-          <p class="cadastro" name="cadastro">Endereço de Entrega</p>
-          <form id="formEntrega">
-            <input type="text" id="cepEntrega" name="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP" required>
-            <input type="text" class="logradouro" name="logradouro" placeholder="Logradouro" required>
-            <input type="text" id="numeroEntrega" name="numero" placeholder="Número" required>
-            <input type="text" id="complementoEntrega" name="complemento" placeholder="Complemento">
-            <input type="text" id="bairroEntrega" name="bairro" placeholder="Bairro" required>
-            <input type="text" id="cidadeEntrega" name="cidade" placeholder="Cidade" required>
-            <input type="text" id="ufEntrega" name="uf" pattern="[A-Za-z]{2}" placeholder="UF" required>
-            <button type="button" class="buttonadd next-step" data-next="step2">Próximo</button>
-          </form>
-        </div>
+  <main class="container">
+    <!-- Container dos formulários -->
+    <section id="formContainer">
+      <!-- Formulário de Endereço de Entrega -->
+      <div class="form-wrapper" id="formEntregaWrapper">
+        <h2>Endereço de Entrega</h2>
+        <form id="formEntrega" class="endereco-form" data-endpoint="/endereco">
+          <input type="text" id="cepEntrega" name="cep" placeholder="CEP" required>
+          <input type="text" id="logradouroEntrega" name="logradouro" placeholder="Logradouro" required>
+          <input type="text" id="numeroEntrega" name="numero" placeholder="Número" required>
+          <input type="text" id="complementoEntrega" name="complemento" placeholder="Complemento">
+          <input type="text" id="bairroEntrega" name="bairro" placeholder="Bairro" required>
+          <input type="text" id="cidadeEntrega" name="cidade" placeholder="Cidade" required>
+          <input type="text" id="ufEntrega" name="uf" placeholder="UF" maxlength="2" required>
+        </form>
       </div>
-    </div>
 
-    <!-- Etapa 2: Endereço de Faturamento -->
-    <div class="form-step" id="step2">
-      <div class="separacao">
-        <div class="info">
-          <p class="cadastro" name="cadastro">Endereço de Faturamento</p>
-          <form id="formFaturamento">
-            <input type="text" id="cepFaturamento" name="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP" required>
-            <input type="text" class="logradouro" name="logradouro" placeholder="Logradouro" required>
-            <input type="text" id="numeroFaturamento" name="numero" placeholder="Número" required>
-            <input type="text" id="complementoFaturamento" name="complemento" placeholder="Complemento">
-            <input type="text" id="bairroFaturamento" name="bairro" placeholder="Bairro" required>
-            <input type="text" id="cidadeFaturamento" name="cidade" placeholder="Cidade" required>
-            <input type="text" id="ufFaturamento" name="uf" pattern="[A-Za-z]{2}" placeholder="UF" required>
-            <button type="button" class="buttonadd prev-step" data-prev="step1">Voltar</button>
-            <button type="submit" class="buttonadd">Finalizar</button>
-          </form>
-        </div>
+      <!-- Formulário de Endereço de Faturamento -->
+      <div class="form-wrapper" id="formFaturamentoWrapper" style="display: none;">
+        <h2>Endereço de Faturamento</h2>
+        <form id="formFaturamento" class="endereco-form" data-endpoint="/enderecofat">
+          <input type="text" id="cepFaturamento" name="cep" placeholder="CEP" required>
+          <input type="text" id="logradouroFaturamento" name="logradouro" placeholder="Logradouro" required>
+          <input type="text" id="numeroFaturamento" name="numero" placeholder="Número" required>
+          <input type="text" id="complementoFaturamento" name="complemento" placeholder="Complemento">
+          <input type="text" id="bairroFaturamento" name="bairro" placeholder="Bairro" required>
+          <input type="text" id="cidadeFaturamento" name="cidade" placeholder="Cidade" required>
+          <input type="text" id="ufFaturamento" name="uf" placeholder="UF" maxlength="2" required>
+        </form>
       </div>
-    </div>
-  </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const nextButtons = document.querySelectorAll(".next-step");
-      const prevButtons = document.querySelectorAll(".prev-step");
-      const steps = document.querySelectorAll(".form-step");
+      <!-- Botão de ação -->
+      <button id="actionButton">Próximo</button>
+    </section>
+  </main>
 
-      nextButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const nextStep = document.getElementById(button.dataset.next);
-          steps.forEach((step) => step.classList.remove("active"));
-          nextStep.classList.add("active");
-        });
-      });
-
-      prevButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const prevStep = document.getElementById(button.dataset.prev);
-          steps.forEach((step) => step.classList.remove("active"));
-          prevStep.classList.add("active");
-        });
-      });
-
-      const formFaturamento = document.getElementById("formFaturamento");
-      formFaturamento.addEventListener("submit", (event) => {
-        event.preventDefault();
-        alert("Formulário enviado!");
-        // Adicione aqui a integração com o backend
-      });
-    });
-  </script>
+  <!-- JS -->
   <script src="/committers/src/main/resources/templates/js/ClienteEndereco.js"></script>
-  <script src="/committers/src/main/resources/templates/js/ClienteEnderecoFAT.js"></script>
 </body>
 
 </html>

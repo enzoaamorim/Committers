@@ -1,183 +1,46 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 body {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #000921, #1c3a57);
   color: white;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 25px;
-  background-color: #000921;
-  border-bottom: 1px solid white;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.header img {
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.header img:hover {
-  transform: translateY(-3px);
-  filter: brightness(0.9);
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
+  background: #000921;
   color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #ffc107;
-  text-shadow: 0px 0px 10px #ffc107;
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 80px; /* Espaço para o header */
-  width: 100%;
-  padding: 20px;
+  margin-top: 80px;
 }
 
 .form-step {
   display: none;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 500px;
-  padding: 20px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
-  border-radius: 15px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .form-step.active {
-  display: flex;
-}
-
-.form-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  display: block;
 }
 
 input {
+  display: block;
   width: 100%;
-  max-width: 400px;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 2px solid transparent;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
-input:focus {
-  outline: none;
-  border-color: #ffc107;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.buttonadd {
-  margin-top: 15px;
-  background: #1c3a57;
-  color: white;
-  padding: 10px 25px;
-  border-radius: 8px;
-  border: 2px solid transparent;
+button {
+  background: #ffc107;
+  padding: 10px 20px;
+  border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.buttonadd:hover {
-  background: #2e5577;
-  border-color: white;
-}
-.cadastro {
-  color: #ffc107; /* Cor chamativa para o título */
-  font-size: 32px; /* Tamanho maior para destacar */
-  font-weight: bold; /* Negrito para dar presença */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para profundidade */
-  text-align: center; /* Centraliza o texto */
-  margin-bottom: 30px; /* Espaço abaixo do título */
-  transition: color 0.3s ease, text-shadow 0.3s ease; /* Animações suaves */
-}
-
-.cadastro:hover {
-  color: #ffd54f; /* Cor mais clara no hover */
-  text-shadow: 3px 3px 10px rgba(255, 193, 7, 0.8); /* Efeito brilhante no hover */
-}
-.info {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centraliza horizontalmente */
-  justify-content: center; /* Centraliza verticalmente */
-  width: 100%;
-  max-width: 500px; /* Define um limite de largura */
-  margin: 0 auto; /* Centraliza o contêiner */
-  padding: 20px;
-  gap: 15px; /* Espaço entre os campos */
-}
-
-input {
-  width: 100%;
-  max-width: 400px; /* Define um tamanho máximo consistente */
-  padding: 8px;
-  border: 2px solid transparent;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  text-align: center; /* Centraliza o texto */
-}
-
-input:focus {
-  outline: none;
-  border-color: #ffc107;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.buttonadd {
-  width: auto;
-  padding: 12px 30px;
-  text-align: center;
-  background: #1c3a57;
-  color: white;
-  border-radius: 8px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
