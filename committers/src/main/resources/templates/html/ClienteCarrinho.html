@@ -55,8 +55,14 @@
   <script>
     var botao = document.getElementById('buttonadd');
     botao.addEventListener('click', function () {
-      window.location.href = "ClienteEndereco.html";
+      const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+      if (!isLoggedIn) {
+        window.location.href = "LoginCliente.html";
+        return;
+      }
+      window.location.href = "ClienteCheckEndereco.html";
     });
+
   </script>
 </body>
 

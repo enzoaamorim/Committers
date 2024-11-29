@@ -96,7 +96,7 @@ body {
 
 .container {
   position: relative;
-  height: 91vh;
+  height: 105vh;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -111,7 +111,7 @@ body {
   box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.9);
   max-width: 75%;
   width: 100%;
-  height: 80%;
+  height: 94%;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease-in-out;
@@ -129,7 +129,7 @@ body {
   /* Aumenta o tamanho da fonte */
   font-weight: bold;
   margin-top: 30px;
-  margin-bottom: 65px;
+  margin-bottom: 35px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   /* Adiciona uma leve sombra para destaque */
   text-align: center;
@@ -157,7 +157,7 @@ body {
   font-weight: bold;
   color: aliceblue;
   margin-right: -45px;
-  margin-top: 41%;
+  margin-top: 59%;
   align-self: flex-end;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;

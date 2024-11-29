@@ -1,97 +1,50 @@
-function listarPedidos() {
-    console.log("Iniciando a função listarPedidos");
-  
-    fetch("http://localhost:8080/pedido", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      method: "GET",
-    })
-      .then(function (res) {
-        console.log("Resposta recebida do servidor:", res);
-        if (!res.ok) {
-          throw new Error("Erro ao carregar os pedidos, status: " + res.status);
-        }
-        return res.json();
-      })
-      .then(function (pedidos) {
-        console.log("Dados dos pedidos recebidos:", pedidos);
-        const listaPedidos = document.getElementById("listaPedidos");
-        if (!listaPedidos) {
-          console.error("Elemento 'listaPedidos' não encontrado no DOM.");
-          return;
-        }
-        listaPedidos.innerHTML = "";
-        pedidos.forEach(function (pedido) {
-          const divPedido = document.createElement("li");
-          divPedido.className = "div-pedido";
-  
-          const textoStatus = pedido.status ? "Concluído" : "Pendente";
-  
-          const pId = document.createElement("span");
-          pId.textContent = `ID: ${pedido.id}`;
-          const pCliente = document.createElement("span");
-          pCliente.textContent = `Cliente: ${pedido.cliente}`;
-          const pData = document.createElement("span");
-          pData.textContent = `Data: ${pedido.data}`;
-          const pStatus = document.createElement("span");
-          pStatus.textContent = `Status: ${textoStatus}`;
-  
-          divPedido.appendChild(pId);
-          divPedido.appendChild(pCliente);
-          divPedido.appendChild(pData);
-          divPedido.appendChild(pStatus);
-  
-          const divButtons = document.createElement("div");
-          divButtons.className = "div-buttons";
-  
-          const btnAlterar = document.createElement("button");
-          btnAlterar.textContent = "Alterar";
-          btnAlterar.onclick = function () {
-            window.location.href = `AlterarPedido.html?id=${pedido.id}`;
-          };
-          divButtons.appendChild(btnAlterar);
-  
-          const btnConcluir = document.createElement("button");
-          btnConcluir.textContent = "Concluir";
-          btnConcluir.disabled = pedido.status;
-          btnConcluir.onclick = function () {
-            concluirPedido(pedido.id);
-          };
-          divButtons.appendChild(btnConcluir);
-  
-          divPedido.appendChild(divButtons);
-          listaPedidos.appendChild(divPedido);
-        });
-      })
-      .catch(function (error) {
-        console.error("Erro ao carregar os pedidos:", error);
-      });
+document.addEventListener("DOMContentLoaded", function () {
+  listarPedidos();
+});
+
+async function buscarCliente(clienteId) {
+  try {
+    const response = await fetch(`http://localhost:8080/clientes/${clienteId}`);
+    if (!response.ok) {
+      console.error(`Erro ao buscar cliente ${clienteId}: ${response.statusText}`);
+      return `Cliente ${clienteId}`;
+    }
+    const cliente = await response.json();
+    return cliente.nome || `Cliente ${clienteId}`;
+  } catch (error) {
+    console.error(`Erro de conexão ao buscar cliente ${clienteId}:`, error);
+    return `Cliente ${clienteId}`;
   }
-  
-  function concluirPedido(pedidoId) {
-    fetch(`http://localhost:8080/pedido/${pedidoId}/concluir`, {
-      method: "PUT",
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Erro ao concluir o pedido, status: " + response.status);
-        }
-      })
-      .then((data) => {
-        console.log("Pedido concluído:", data);
-        listarPedidos(); // Atualiza a lista de pedidos
-      })
-      .catch((error) => {
-        console.error("Erro ao concluir o pedido:", error);
-      });
+}
+
+async function listarPedidos() {
+  console.log("Iniciando a função listarPedidos");
+
+  const pedidosSalvos = JSON.parse(localStorage.getItem("pedidosSalvos") || "[]");
+  const listaUsuarios = document.getElementById("listaUsuarios");
+
+  if (!listaUsuarios) {
+    console.error("Elemento 'listaUsuarios' não encontrado no DOM.");
+    return;
   }
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM totalmente carregado, chamando listarPedidos");
-    listarPedidos();
-  });
-  
+
+  listaUsuarios.innerHTML = ""; // Limpar lista
+
+  for (const pedido of pedidosSalvos) {
+    const li = document.createElement("li");
+    li.className = "div-usuario";
+
+    const textoStatus = pedido.status ? "Concluído" : "Pendente";
+    const classeStatus = pedido.status ? "status-concluido" : "status-pendente";
+
+    const clienteNome = await buscarCliente(pedido.clienteId);
+
+    li.innerHTML = `
+      <span class="nome">${clienteNome}</span>
+      <span class="email">${pedido.id}</span>
+      <span class="status ${classeStatus}">${textoStatus}</span>
+    `;
+
+    listaUsuarios.appendChild(li);
+  }
+}

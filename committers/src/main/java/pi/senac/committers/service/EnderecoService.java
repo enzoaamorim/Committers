@@ -50,5 +50,16 @@ public class EnderecoService {
     public void deletarEndereco(Integer id) {
         repository.deleteById(id);
     }
+
+    public Endereco listarID(Integer id){
+        Optional<Endereco> optionalEnderecoLista = repository.findById(id);
+
+        if(optionalEnderecoLista.isPresent()){
+            var endereco = optionalEnderecoLista.get();
+            return endereco;
+        } else{
+            return null;
+        }
+    }
 }
 

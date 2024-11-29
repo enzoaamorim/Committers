@@ -239,3 +239,32 @@ button {
 .hab {
   margin-left: 80px;
 }
+
+.status-concluido {
+  color: #28a745; /* Verde para status concluído */
+  font-weight: bold;
+}
+
+.status-pendente {
+  color: #dc3545; /* Vermelho para status pendente */
+  font-weight: bold;
+}
+
+button {
+  background-color: #ffc107;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e0a800;
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}

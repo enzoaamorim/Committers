@@ -1,42 +1,144 @@
-// Função para buscar pedidos da API
-async function buscarPedidos() {
-    try {
-      // Substitua a URL pelo endpoint real do seu backend
-      const response = await fetch("http://localhost:8080/pedido");
+document.addEventListener("DOMContentLoaded", function() {
+  renderizarResumo();
+});
+
+function renderizarResumo() {
+  const containerResumo = document.getElementById("resumoEndereco");
+  containerResumo.innerHTML = ""; // Limpa o conteúdo existente
+
+  // Recuperar dados do localStorage
+  const storedData = JSON.parse(localStorage.getItem('userFormData') || '{}');
+  const carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens') || '[]');
+  const clienteId = JSON.parse(localStorage.getItem('clienteId') || '[]');
+  
+  // Calcular valor total do carrinho
+  const valorTotal = carrinhoItens.reduce((total, item) => {
+    return total + (parseFloat(item.valor) * item.quantidade);
+  }, 0);
+
+  // Recuperar dados de endereço de entrega
+  const enderecoEntrega = storedData.enderecoEntrega || {};
+  const enderecoFAT = storedData.enderecoFaturamento || {};
+  const metodoPagamento = storedData.metodoPagamento || {};
+
+  // Buscar informações do cliente
+  fetch(`http://localhost:8080/clientes/${clienteId}`)
+    .then(response => {
       if (!response.ok) {
-        throw new Error("Erro ao buscar os pedidos");
+        throw new Error('Erro ao buscar informações do cliente');
       }
-      const pedidos = await response.json();
-      renderizarPedidos(pedidos);
-    } catch (erro) {
-      console.error(erro);
-      alert("Não foi possível carregar os pedidos.");
-    }
-  }
-  
-  // Função para renderizar os pedidos na página
-  function renderizarPedidos(pedidos) {
-    const containerResumo = document.getElementById("resumoEndereco");
-    containerResumo.innerHTML = ""; // Limpa o conteúdo existente
-  
-    pedidos.forEach((pedido) => {
+      return response.json();
+    })
+    .then(cliente => {
+      // Criar div para resumo do pedido
       const pedidoDiv = document.createElement("div");
       pedidoDiv.className = "pedido";
-  
+
+      // Preparar HTML com informações do pedido e do cliente
       pedidoDiv.innerHTML = `
-        <p><strong>Cliente:</strong> ${pedido.nomeDoCli}</p>
-        <p><strong>Valor:</strong> R$ ${pedido.valor.toFixed(2)}</p>
-        <p><strong>Quantidade:</strong> ${pedido.quantidade}</p>
-        <p><strong>Endereço:</strong> ${pedido.logradouro}, ${pedido.numero || "S/N"} - ${pedido.bairro}, ${pedido.cidade} - ${pedido.uf}</p>
-        <p><strong>CEP:</strong> ${pedido.cep}</p>
-        <p><strong>Complemento:</strong> ${pedido.complemento || "N/A"}</p>
-        <p><strong>Status:</strong> ${pedido.status}</p>
+        <h2>Resumo do Pedido</h2>
+        
+        <h3>Informações do Cliente</h3>
+        <p>
+          <strong>Nome:</strong> ${cliente.nome}<br>
+          <strong>CPF:</strong> ${cliente.cpf}<br>
+          <strong>Email:</strong> ${cliente.email}<br>
+        </p>
+
+        <br>
+        
+        <h3>Produtos</h3>
+        ${carrinhoItens.map(item => `
+          <p>
+            <strong>${item.nome}</strong> - 
+            Quantidade: ${item.quantidade} - 
+            Valor unitário: R$ ${parseFloat(item.valor).toFixed(2)}
+          </p>
+        `).join('')}
+        
+        <p><strong>Valor Total:</strong> R$ ${valorTotal.toFixed(2)}</p>
+
+        <br>
+        
+        <h3>Endereço de Entrega</h3>
+        <p>
+          <strong>Logradouro:</strong> ${enderecoEntrega.logradouro || 'N/A'}<br>
+          <strong>Número:</strong> ${enderecoEntrega.numero || 'S/N'}<br>
+          <strong>Bairro:</strong> ${enderecoEntrega.bairro || 'N/A'}<br>
+          <strong>Cidade:</strong> ${enderecoEntrega.cidade || 'N/A'}<br>
+          <strong>UF:</strong> ${enderecoEntrega.uf || 'N/A'}<br>
+          <strong>CEP:</strong> ${enderecoEntrega.cep || 'N/A'}<br>
+          <strong>Complemento:</strong> ${enderecoEntrega.complemento || 'N/A'}
+        </p>
+
+        <br>
+
+    <h3>Endereço de Faturamento</h3>
+    <p>
+      <strong>Logradouro:</strong> ${enderecoFAT.logradouro || 'N/A'}<br>
+      <strong>Número:</strong> ${enderecoFAT.numero || 'S/N'}<br>
+      <strong>Bairro:</strong> ${enderecoFAT.bairro || 'N/A'}<br>
+      <strong>Cidade:</strong> ${enderecoFAT.cidade || 'N/A'}<br>
+      <strong>UF:</strong> ${enderecoFAT.uf || 'N/A'}<br>
+      <strong>CEP:</strong> ${enderecoFAT.cep || 'N/A'}<br>
+      <strong>Complemento:</strong> ${enderecoFAT.complemento || 'N/A'}
+    </p>
+
+    <br>
+        
+        <h3>Método de Pagamento</h3>
+        <p>
+          <strong>Forma:</strong> ${metodoPagamento.formaId === '1' ? 'Boleto' : 'Cartão'}
+          ${metodoPagamento.formaId === '2' ? `
+            <br><strong>Número do Cartão:</strong> **** **** **** ${metodoPagamento.cartaoInfo.numero.slice(-4)}
+            <br><strong>Nome no Cartão:</strong> ${metodoPagamento.cartaoInfo.nome}
+            <br><strong>Parcelas:</strong> ${metodoPagamento.cartaoInfo.parcelas}x
+          ` : ''}
+        </p>
       `;
-  
+
       containerResumo.appendChild(pedidoDiv);
+    })
+    .catch(error => {
+      console.error('Erro:', error);
+      alert('Não foi possível carregar as informações do cliente');
     });
-  }
+
+  // Adicionar evento ao botão de confirmação
+  const buttonConfirmar = document.querySelector(".buttonadd");
+  buttonConfirmar.addEventListener("click", confirmarPedido);
+}
+
+function confirmarPedido() {
+  const storedData = JSON.parse(localStorage.getItem('userFormData') || '{}');
+  const carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens') || '[]');
+  const metodoPagamento = storedData.metodoPagamento || {};
+
+  // Preparar dados do pedido
+  const dadosPedido = {
+    clienteId: storedData.clienteId || 1,
+    enderecoEntregaId: storedData.enderecoEntrega?.id || 1,
+    enderecoFaturamentoId: storedData.enderecoFaturamento?.id || 1,
+    carrinho: carrinhoItens,
+    formaPagamento: metodoPagamento.formaId === '1' ? 'Boleto' : 'Cartão',
+    boletoInfo: metodoPagamento.formaId === '1' ? metodoPagamento.boletoInfo : null,
+    cartaoInfo: metodoPagamento.formaId === '2' ? metodoPagamento.cartaoInfo : null,
+  };
+
+  // Recuperar pedidos antigos
+  const pedidosAntigos = JSON.parse(localStorage.getItem('pedidos') || '[]');
   
-  // Chama a função para buscar e exibir os pedidos ao carregar a página
-  document.addEventListener("DOMContentLoaded", buscarPedidos);
-  
+  // Adicionar novo pedido à lista
+  pedidosAntigos.push(dadosPedido);
+  localStorage.setItem('pedidosSalvos', JSON.stringify(pedidosAntigos));
+
+  // Limpar dados do localStorage
+  localStorage.removeItem('carrinhoItens');
+  delete storedData.metodoPagamento;
+  delete storedData.enderecoEntrega;
+  delete storedData.enderecoFaturamento;
+  localStorage.setItem('userFormData', JSON.stringify(storedData));
+
+  alert("Pedido finalizado com sucesso!");
+  window.location.href = "PedidosCliente.html";
+}

@@ -35,6 +35,7 @@ function login() {
         const clienteId = data.clienteId;
         localStorage.setItem("loggedIn", true);
         localStorage.setItem("clienteId", clienteId);
+        localStorage.setItem("role", 3);
         
         // Redireciona após o usuário clicar em "OK"
         window.location.href = "ClienteMenu.html";

@@ -80,7 +80,7 @@
 
       botao.addEventListener('click', function () {
 
-        localStorage.removeItem("loggedIn");
+        localStorage.setItem("loggedIn", false);
         localStorage.removeItem("clienteId");
         window.location.href = 'ClienteMenu.html';
 

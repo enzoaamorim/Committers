@@ -55,9 +55,53 @@ function listarEnderecos() {
 }
 
 function selecionarEndereco(enderecoId) {
-  // Salvar o ID do endereço no localStorage
-  localStorage.setItem("enderecoSelecionado", enderecoId);
+  console.log("ID do endereço selecionado:", enderecoId); // Log para depuração
 
-  // Redirecionar para a página de resumo
-  window.location.href = "ClienteResumo.html";
+  // Primeiro, busca o endereço de entrega
+  fetch(`http://localhost:8080/endereco/${enderecoId}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  })
+    .then(function (resposta) {
+      if (!resposta.ok) {
+        throw new Error(`Erro ao buscar o endereço de entrega: ${resposta.status}`);
+      }
+      return resposta.json();
+    })
+    .then(function (enderecoEntrega) {
+      // Após buscar o endereço de entrega, agora busca o endereço de faturamento
+      return fetch(`http://localhost:8080/enderecofat/${enderecoId}`, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      })
+        .then(function (respostaFat) {
+          if (!respostaFat.ok) {
+            throw new Error(`Erro ao buscar o endereço de faturamento: ${respostaFat.status}`);
+          }
+          return respostaFat.json();
+        })
+        .then(function (enderecoFaturamento) {
+          // Salvar os endereços no localStorage
+          const userFormData = JSON.parse(localStorage.getItem("userFormData") || "{}");
+          userFormData.enderecoEntrega = enderecoEntrega;
+          userFormData.enderecoFaturamento = enderecoFaturamento;
+
+          // Atualizar o localStorage
+          localStorage.setItem("userFormData", JSON.stringify(userFormData));
+
+          // Redirecionar para a página de resumo
+          window.location.href = "CheckCliente.html";
+        });
+    })
+    .catch(function (erro) {
+      console.error("Erro ao buscar os endereços:", erro);
+      alert("Não foi possível selecionar os endereços. Verifique sua conexão ou tente novamente.");
+    });
 }
+

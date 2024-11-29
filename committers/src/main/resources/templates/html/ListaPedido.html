@@ -4,17 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Lista de Usuarios - Committers</title>
+  <title>Lista de Pedidos - Committers</title>
   <link rel="icon" href="/committers/src/main/resources/templates/img/img-committers.png" type="image/x-icon">
-
   <link rel="stylesheet" href="/committers/src/main/resources/templates/css/ListaPedido.css">
   <link rel='stylesheet'
     href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 </head>
 
 <body>
@@ -24,12 +20,10 @@
       <img src="/committers/src/main/resources/templates/img/img-committers.png" alt="Logo do E-commerce" width="40"
         height="40">
     </a>
-
     <nav class="nav-links">
       <a href="/committers/src/main/resources/templates/html/ClienteMenu.html">Home</a>
       <a href="/committers/src/main/resources/templates/html/ClienteConta.html">Conta</a>
     </nav>
-
     <div class="icons">
       <a href="/committers/src/main/resources/templates/html/ClienteCarrinho.html" class="compras icon-text">
         <i class="fi fi-rr-cart-shopping-fast"></i>
@@ -40,34 +34,124 @@
         <span>Login</span>
       </a>
     </div>
-    </div>
   </header>
 
   <div class="container">
     <div class="box">
-      <h1>Lista Pedido</h1>
+      <h1>Lista Pedidos</h1>
       <div class="cabecalho">
         <span class="nome">Nome do Cliente</span>
-        <span class="email">Numero do Pedido</span>
+        <span class="email">Número do Pedido</span>
         <span class="status">Status</span>
-        <span class="nivel">Nivel</span>
-        <span class="alterar">Alterar</span>
-        <span class="hab">Habilitar/Desabilitar</span>
+        <span class="hab">Mudar Status</span>
       </div>
       <div class="renderizados">
         <ul id="listaUsuarios"></ul>
       </div>
-
     </div>
   </div>
 
   <script>
-    var botao = document.getElementById('add');
-
-    botao.addEventListener('click', function () {
-
-      window.location.href = `CadastroUsuario.html`
+    // Função para listar os pedidos
+    document.addEventListener("DOMContentLoaded", function () {
+      listarPedidos();
     });
+
+    async function buscarCliente(clienteId) {
+      try {
+        const response = await fetch(`http://localhost:8080/clientes/${clienteId}`);
+        if (!response.ok) {
+          console.error(`Erro ao buscar cliente ${clienteId}: ${response.statusText}`);
+          return `Cliente ${clienteId}`;
+        }
+        const cliente = await response.json();
+        return cliente.nome || `Cliente ${clienteId}`;
+      } catch (error) {
+        console.error(`Erro de conexão ao buscar cliente ${clienteId}:`, error);
+        return `Cliente ${clienteId}`;
+      }
+    }
+
+    // Função para listar os pedidos a partir do localStorage
+    async function listarPedidos() {
+      console.log("Iniciando a função listarPedidos");
+
+      const pedidosSalvos = JSON.parse(localStorage.getItem("pedidosSalvos") || "[]");
+      const listaUsuarios = document.getElementById("listaUsuarios");
+
+      if (!listaUsuarios) {
+        console.error("Elemento 'listaUsuarios' não encontrado no DOM.");
+        return;
+      }
+
+      listaUsuarios.innerHTML = ""; // Limpar lista
+
+      for (const pedido of pedidosSalvos) {
+        const li = document.createElement("li");
+        li.className = "div-usuario";
+
+        const statusOptions = ["Confirmado", "A Confirmar", "Cancelado"];
+        const statusIndex = statusOptions.indexOf(pedido.status || "A Confirmar");
+
+        const clienteNome = await buscarCliente(pedido.clienteId);
+
+        // Criação da combo box com os status possíveis
+        const selectStatus = document.createElement("select");
+        statusOptions.forEach((status, index) => {
+          const option = document.createElement("option");
+          option.value = status;
+          option.textContent = status;
+          if (index === statusIndex) {
+            option.selected = true;
+          }
+          selectStatus.appendChild(option);
+        });
+
+        selectStatus.addEventListener("change", function (event) {
+          const novoStatus = event.target.value;
+          mudarStatus(pedido.id, novoStatus);
+        });
+
+        li.innerHTML = `
+          <span class="nome">${clienteNome}</span>
+          <span class="email">${pedido.id}</span>
+          <span class="status">${pedido.status}</span>
+          <span class="hab"></span>
+        `;
+
+        // Adicionar a combo box de status no elemento li
+        const statusContainer = li.querySelector(".hab");
+        statusContainer.appendChild(selectStatus);
+
+        // Verificar se o usuário tem permissão para mudar o status (role 2)
+        const role = localStorage.getItem("role");
+        if (role !== "2") {
+          selectStatus.disabled = true; // Desabilitar a combo box para quem não tem role 2
+        }
+
+        listaUsuarios.appendChild(li);
+      }
+    }
+
+    // Função para mudar o status de um pedido salvo no localStorage
+    function mudarStatus(pedidoId, novoStatus) {
+      const pedidosSalvos = JSON.parse(localStorage.getItem("pedidosSalvos") || "[]");
+
+      const pedidoIndex = pedidosSalvos.findIndex(pedido => pedido.id === pedidoId);
+      if (pedidoIndex === -1) {
+        console.error("Pedido não encontrado no localStorage.");
+        return;
+      }
+
+      // Alterar o status do pedido
+      pedidosSalvos[pedidoIndex].status = novoStatus;
+
+      // Salvar as alterações no localStorage
+      localStorage.setItem("pedidosSalvos", JSON.stringify(pedidosSalvos));
+
+      // Recarregar a lista de pedidos
+      listarPedidos();
+    }
   </script>
 
 </body>

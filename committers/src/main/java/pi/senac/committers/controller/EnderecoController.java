@@ -46,4 +46,9 @@ public class EnderecoController {
           enderecoService.deletarEndereco(id);
           return ResponseEntity.noContent().build();
       }
+
+      @GetMapping("/{id}")
+      public ResponseEntity<Endereco> listaEnderecoID(@PathVariable Integer id){
+        return ResponseEntity.ok().body(enderecoService.listarID(id));
+      }
 }

@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import pi.senac.committers.modal.Endereco;
 import pi.senac.committers.modal.EnderecoFAT;
 import pi.senac.committers.repository.IEnderecoFAT;
 
@@ -50,5 +51,16 @@ public class EnderecoFATService {
 
     public void deletarEndereco(Integer id) {
         repository.deleteById(id);
+    }
+
+    public EnderecoFAT listarID(Integer id){
+        Optional<EnderecoFAT> optionalEnderecoLista = repository.findById(id);
+
+        if(optionalEnderecoLista.isPresent()){
+            var enderecoFAT = optionalEnderecoLista.get();
+            return enderecoFAT;
+        } else{
+            return null;
+        }
     }
 }

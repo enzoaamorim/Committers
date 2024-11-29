@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import pi.senac.committers.modal.Endereco;
 import pi.senac.committers.modal.EnderecoFAT;
 import pi.senac.committers.service.EnderecoFATService;
 
@@ -46,4 +47,9 @@ public class EnderecoFATController {
         enderecoFATService.deletarEndereco(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{id}")
+      public ResponseEntity<EnderecoFAT> listaEnderecoID(@PathVariable Integer id){
+        return ResponseEntity.ok().body(enderecoFATService.listarID(id));
+      }
 }
