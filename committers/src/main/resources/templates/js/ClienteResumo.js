@@ -114,8 +114,12 @@ function confirmarPedido() {
   const carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens') || '[]');
   const metodoPagamento = storedData.metodoPagamento || {};
 
+  // Gerar número aleatório para o pedido
+  const numeroPedido = Math.floor(100000 + Math.random() * 900000); // Número de 6 dígitos
+
   // Preparar dados do pedido
   const dadosPedido = {
+    id: numeroPedido, // Número do pedido
     clienteId: storedData.clienteId || 1,
     enderecoEntregaId: storedData.enderecoEntrega?.id || 1,
     enderecoFaturamentoId: storedData.enderecoFaturamento?.id || 1,
@@ -123,22 +127,25 @@ function confirmarPedido() {
     formaPagamento: metodoPagamento.formaId === '1' ? 'Boleto' : 'Cartão',
     boletoInfo: metodoPagamento.formaId === '1' ? metodoPagamento.boletoInfo : null,
     cartaoInfo: metodoPagamento.formaId === '2' ? metodoPagamento.cartaoInfo : null,
+    status: 'A Confirmar', // Status inicial
   };
 
   // Recuperar pedidos antigos
-  const pedidosAntigos = JSON.parse(localStorage.getItem('pedidos') || '[]');
-  
+  const pedidosAntigos = JSON.parse(localStorage.getItem('pedidosSalvos') || '[]');
+
   // Adicionar novo pedido à lista
   pedidosAntigos.push(dadosPedido);
   localStorage.setItem('pedidosSalvos', JSON.stringify(pedidosAntigos));
 
-  // Limpar dados do localStorage
+  // Limpar dados do localStorage relacionados ao carrinho e formulário
   localStorage.removeItem('carrinhoItens');
   delete storedData.metodoPagamento;
   delete storedData.enderecoEntrega;
   delete storedData.enderecoFaturamento;
   localStorage.setItem('userFormData', JSON.stringify(storedData));
 
-  alert("Pedido finalizado com sucesso!");
-  window.location.href = "PedidosCliente.html";
+  alert(`Pedido finalizado com sucesso! Número do pedido: ${numeroPedido}`);
+  window.location.href = "meusPedidos.html";
 }
+
+

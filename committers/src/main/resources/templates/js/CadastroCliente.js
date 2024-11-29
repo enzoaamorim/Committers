@@ -40,6 +40,9 @@ function cadastrar() {
           icon: 'success',
           title: 'Sucesso!',
           text: 'Cadastro realizado com sucesso!',
+        }).then(() => {
+          // Redireciona para a página ClienteEndereco.html
+          window.location.href = "/committers/src/main/resources/templates/html/LoginCliente.html";
         });
         limpar();
       } else {

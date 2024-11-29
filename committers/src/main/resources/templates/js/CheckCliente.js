@@ -123,6 +123,5 @@ function finalizarPagamento() {
   })
   .catch((error) => {
     console.error(error);
-    alert("Erro ao finalizar o pedido.");
   });
 }

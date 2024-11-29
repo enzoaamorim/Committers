@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Pedidos - Committers</title>
+  <title>Meus Pedidos - Committers</title>
   <link rel="icon" href="/committers/src/main/resources/templates/img/img-committers.png" type="image/x-icon">
   <link rel="stylesheet" href="/committers/src/main/resources/templates/css/ListaPedido.css">
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -36,15 +36,14 @@
 
   <div class="container">
     <div class="box">
-      <h1>Lista de Pedidos</h1>
+      <h1>Meus Pedidos</h1>
       <div class="cabecalho">
         <span class="nome">Nome do Cliente</span>
         <span class="email">Número do Pedido</span>
         <span class="status">Status</span>
-        <span class="hab">Mudar Status</span>
       </div>
       <div class="renderizados">
-        <ul id="listaUsuarios"></ul>
+        <ul id="listaPedidos"></ul>
       </div>
     </div>
   </div>
@@ -69,14 +68,14 @@
 
     async function listarPedidos() {
       const pedidosSalvos = JSON.parse(localStorage.getItem("pedidosSalvos") || "[]");
-      const listaUsuarios = document.getElementById("listaUsuarios");
+      const listaPedidos = document.getElementById("listaPedidos");
 
-      if (!listaUsuarios) {
-        console.error("Elemento 'listaUsuarios' não encontrado no DOM.");
+      if (!listaPedidos) {
+        console.error("Elemento 'listaPedidos' não encontrado no DOM.");
         return;
       }
 
-      listaUsuarios.innerHTML = ""; // Limpar lista antes de renderizar
+      listaPedidos.innerHTML = ""; // Limpar lista antes de renderizar
 
       for (const pedido of pedidosSalvos) {
         const li = document.createElement("li");
@@ -92,51 +91,13 @@
           <span class="nome">${clienteNome}</span>
           <span class="email">${pedido.id}</span>
           <span class="status">${statusText}</span>
-          <span class="hab"></span>
         `;
 
-        // Criar dropdown para alterar status
-        const selectStatus = document.createElement("select");
-        ["Confirmado", "A Confirmar", "Cancelado"].forEach(status => {
-          const option = document.createElement("option");
-          option.value = status;
-          option.textContent = status;
-          if (status === statusText) option.selected = true;
-          selectStatus.appendChild(option);
-        });
-
-        selectStatus.addEventListener("change", function (event) {
-          const novoStatus = event.target.value;
-          mudarStatus(pedido.id, novoStatus);
-        });
-
-        const habContainer = li.querySelector(".hab");
-        habContainer.appendChild(selectStatus);
-
-        // Desabilitar dropdown se usuário não tiver permissão
-        const role = localStorage.getItem("role");
-        if (role !== "2") {
-          selectStatus.disabled = true;
-        }
-
-        listaUsuarios.appendChild(li);
+        listaPedidos.appendChild(li);
       }
-    }
-
-    function mudarStatus(pedidoId, novoStatus) {
-      const pedidosSalvos = JSON.parse(localStorage.getItem("pedidosSalvos") || "[]");
-      const pedido = pedidosSalvos.find(p => p.id === pedidoId);
-
-      if (!pedido) {
-        console.error("Pedido não encontrado no localStorage.");
-        return;
-      }
-
-      pedido.status = novoStatus; // Atualizar status
-      localStorage.setItem("pedidosSalvos", JSON.stringify(pedidosSalvos));
-      listarPedidos(); // Recarregar lista
     }
   </script>
+
 </body>
 
 </html>

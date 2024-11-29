@@ -263,3 +263,27 @@ body {
   transform: scale(0.95);
   /* Efeito de clique */
 }
+
+#carouselContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#carouselContainer div {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+#carouselContainer img {
+  max-width: 200px;
+  max-height: 150px;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+#carouselContainer img:hover {
+  transform: scale(1.1);
+}

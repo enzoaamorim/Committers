@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Lista de Produtos - Committers</title>
+  <title>Lista de Produtos e Pedidos - Committers</title>
   <link rel="icon" href="/committers/src/main/resources/templates/img/img-committers.png" type="image/x-icon">
 
   <link rel="stylesheet" href="/committers/src/main/resources/templates/css/ListaProduto.css">
@@ -41,10 +41,10 @@
         <span>Login</span>
       </a>
     </div>
-    </div>
   </header>
 
   <div class="container">
+    <!-- Produtos -->
     <div class="box">
       <h1>Lista de Produtos</h1>
       <button id="add">+</button>
@@ -61,7 +61,16 @@
         <!-- Produtos serão renderizados aqui -->
       </div>
     </div>
+
+    <!-- Pedidos -->
+    <div class="box">
+      <h1>Lista de Pedidos</h1>
+      <div id="listaPedidos">
+        <!-- Pedidos serão renderizados aqui -->
+      </div>
+    </div>
   </div>
+
   <script src="/committers/src/main/resources/templates/js/ListaProduto.js"></script>
   <script>
     var botao = document.getElementById('add');
