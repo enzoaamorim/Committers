@@ -214,6 +214,7 @@ button {
 
 .div-usuario span {
   padding-top: 7px;
+  margin-left: 200px;
 }
 
 .nome {
@@ -226,18 +227,6 @@ button {
 
 .status {
   margin-left: 105px;
-}
-
-.nivel {
-  margin-left: 105px;
-}
-
-.alterar {
-  margin-left: 75px;
-}
-
-.hab {
-  margin-left: 80px;
 }
 
 .status-concluido, .status-pendente {

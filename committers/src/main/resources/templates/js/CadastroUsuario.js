@@ -8,17 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const Inome = document.querySelector(".nome");
         const Iemail = document.querySelector(".email");
         const Isenha = document.querySelector(".senha");
-        const IconfirmarSenha = document.querySelector(".confirmar-senha");
         const Icpf = document.querySelector(".cpf");
         const Inivel = document.querySelector(".nivel");
   
         // Remove a classe de erro antes da verificação
         Icpf.classList.remove("input-error");
-  
-        //if (Isenha.value !== IconfirmarSenha.value) {
-          //alert("As senhas não coincidem!");
-          //return;
-        //}
   
         const userData = {
           nome: Inome.value,
@@ -39,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
         })
           .then(function (res) {
             console.log(res);
-            window.location.href = "LoginUsuario.html";
             limpar();
           })
           .catch(function (error) {

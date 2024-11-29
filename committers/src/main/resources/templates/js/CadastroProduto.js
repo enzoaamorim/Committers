@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
           .then(function (res) {
             console.log(res);
+            window.location.href = 'ListaProduto.html';
             limpar();
           })
           .catch(function (error) {
