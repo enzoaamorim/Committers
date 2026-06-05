@@ -5,7 +5,7 @@
 ---------------------------------------------------------------------------------------------------
 
 <p align="center">
-<img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS%20DO%20PROJETO&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+  <img loading="lazy" src="https://img.shields.io/static/v1?label=STATUS%20DO%20PROJETO&message=FINALIZADO&color=2ea44f&style=for-the-badge"/>
 </p>
 
 ---------------------------------------------------------------------------------------------------
